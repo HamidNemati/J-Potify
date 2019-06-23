@@ -1,18 +1,23 @@
 package Dark;
 
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyIcons;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DarkHeader extends JPanel {
+public class DarkHeader extends JPanel implements ActionListener {
+    JButton headerMusicLogo = new JButton();
     public DarkHeader(){
         super();
         setBackground(MyColors.DarkLeftBar);
         setLayout(new BorderLayout());
-        JButton headerMusicLogo = new JButton();// for the music logo and "JPOTIFY" title...
+        ;// for the music logo and "JPOTIFY" title...
+        headerMusicLogo.addActionListener(this);
         headerMusicLogo.setFocusable(false);
         headerMusicLogo.setBorderPainted(false);
         headerMusicLogo.setBorder(new EmptyBorder(0,0,0,0));
@@ -35,5 +40,13 @@ public class DarkHeader extends JPanel {
         DarkUserInfo userInfo = new DarkUserInfo("USERNAME");
         headerWithNoLogo.add(userInfo , BorderLayout.EAST);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==headerMusicLogo){
+            System.out.println("Home");
+            Main.darkFrame.addHomeToMainPanel();
+        }
     }
 }

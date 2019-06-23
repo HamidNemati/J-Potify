@@ -19,6 +19,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     private JPanel body;
     private JPanel homePlayListPanel;
     private JPanel SongsPanel;
+    private JButton addSong;
     private ArrayList<DarkSongPanel> songsArraylist;
     public DarkMainPanel(String headerName){// non playlist pages
         super();
@@ -69,21 +70,26 @@ public class DarkMainPanel extends JPanel implements ActionListener {
 
 
             body.setBorder(new EmptyBorder(5,20,20,20));
+            ////////////////////////////////////////////////////////////////////////////////////////////////
         }else  if(headerName.equals("SONGS")){
+            body.setLayout(new BorderLayout());
             JPanel songsList = new JPanel();
-//            body.setLayout(new BoxLayout(body , BoxLayout.Y_AXIS));
-            songsList.setLayout(new GridLayout(15,1));
-            songsList.setMinimumSize(new Dimension(900,500));
-            songsList.setMaximumSize(new Dimension(900,500));
+//            songsList.setLayout(new GridLayout(15,1));
+            songsList.setLayout(new BoxLayout(songsList , BoxLayout.Y_AXIS));
+            songsList.setMinimumSize(new Dimension(1000,500));
+            songsList.setMaximumSize(new Dimension(1000,500));
+            addSong = new JButton("addSong");
+            addSong.addActionListener(this);
+            body.add(addSong , BorderLayout.NORTH);
             songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
             songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
             songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
-            body.setBackground(Color.MAGENTA);
+
             for (DarkSongPanel i: songsArraylist){
                 songsList.add(i);
             }
             body.setBorder(new EmptyBorder(5,20,20,20));
-            body.add(songsList);
+            body.add(songsList , BorderLayout.CENTER);
         }else  if(headerName.equals("ALBUMS")){
 
             body.setBorder(new EmptyBorder(5,20,20,20));
@@ -131,7 +137,9 @@ public class DarkMainPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==addSong){
 
+        }
 
     }
 }
