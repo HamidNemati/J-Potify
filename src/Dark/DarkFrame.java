@@ -162,11 +162,12 @@ public class DarkFrame extends JFrame {
         add(leftBar, BorderLayout.WEST);
         add(header , BorderLayout.PAGE_START);
         add(rightSidePanel, BorderLayout.EAST);
+
         add(homePanel , BorderLayout.CENTER);
 
 
 
-//        add(HARDCORE , BorderLayout.CENTER);
+        add(HARDCORE , BorderLayout.CENTER);
 
 
 

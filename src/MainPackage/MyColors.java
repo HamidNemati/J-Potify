@@ -7,6 +7,9 @@ public class MyColors {
 
     public static Color NormalGray = new Color(127,127,127);
 
+    public static Color Trancparent = new Color(0f,0f,0f,.0f );
+
+
 
     public static Color LightFooter = new Color(205,205,205);
     public static Color DarkFooter = new Color(50,50,50);

@@ -1,9 +1,6 @@
 package Dark;
 
-import MainPackage.MyColors;
-import MainPackage.MyFonts;
-import MainPackage.MyIcons;
-import MainPackage.OvalBorder;
+import MainPackage.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -101,26 +98,29 @@ public class DarkMainPanel extends JPanel implements ActionListener {
 //    public DarkMainPanel(Playlist playlist){
     public DarkMainPanel(int playlist){
         super(new BorderLayout());
-        JPanel header = new JPanel(new BorderLayout());
+//        JPanel header = new JPanel(new BorderLayout());
+        GradientPanel header = new GradientPanel(MyColors.DarkerTextColor ,MyColors.DarkBackground );
+        header.setLayout(new BorderLayout());
         JLabel playlistArtwork = new JLabel(MyIcons.DarkNoArtwork);
         playlistArtwork.setBorder(new EmptyBorder(20,20,20,20));
         header.add(playlistArtwork, BorderLayout.WEST);
 
         JPanel playlistHeaderTexts = new JPanel(new BorderLayout());
+        playlistHeaderTexts.setBackground(MyColors.Trancparent);
         playlistHeaderTexts.setBorder(new EmptyBorder(90,0,70,0));
 
         JLabel playlistHeaderTitle = new JLabel("PLAYLIST");
         playlistHeaderTitle.setFont(MyFonts.arial);
         playlistHeaderTitle.setForeground(MyColors.DarkTextColor);
 
-        JLabel playlistHeaderNameTitle = new JLabel("HARDCORE");
+        JLabel playlistHeaderNameTitle = new JLabel("Rock&Metal");
         playlistHeaderNameTitle.setFont(MyFonts.heavyTitle);
         playlistHeaderNameTitle.setForeground(MyColors.DarkTextColor);
 
         playlistHeaderTexts.add(playlistHeaderNameTitle, BorderLayout.CENTER);
         playlistHeaderTexts.add(playlistHeaderTitle, BorderLayout.NORTH);
         header.add(playlistHeaderTexts , BorderLayout.CENTER);
-        JLabel partition = new JLabel(MyIcons.DarkFriendsActivitHorizentalPartition);
+        JLabel partition = new JLabel(MyIcons.DarkSongHorizentalPartition);
         header.add(partition , BorderLayout.SOUTH);
 
         add(header,BorderLayout.NORTH);
