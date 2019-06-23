@@ -1,5 +1,6 @@
 package Dark;
 
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -19,15 +20,19 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
     DarkPlaylistTitle sharedPlaylist;
     DarkPlaylistTitle favouritePlaylist;
 
+    JButton playlistButton = new JButton();//playlist button
 
     public DarkPlaylistPanel(){
         super();
+        playlistButton.setIcon(MyIcons.DarkPlaylistButton);
+        playlistButton.setFocusable(false);
+        playlistButton.setBorderPainted(false);
+        playlistButton.setBorder(new EmptyBorder(0,0,0,0));
         playlistsArraylist = new ArrayList<>();
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkLeftBar);
-        JLabel playlistButton = new JLabel(MyIcons.DarkPlaylistButton);//playlist button
         add(playlistButton , BorderLayout.NORTH );
-
+        playlistButton.addActionListener(this);
 //        JPanel playlistsList = new JPanel(new BorderLayout());// a panel that shows all of the playlists
         playlistsList = new JPanel();// a panel that shows all of the playlists
         playlistsList.setLayout(new BoxLayout(playlistsList , BoxLayout.Y_AXIS));
@@ -79,6 +84,9 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
             for (DarkPlaylistTitle i : playlistsArraylist){
                 playlistsList.add(i);
             }
+        }else if(e.getSource()==playlistButton){
+            System.out.println("HOME");
+            Main.darkFrame.addPlaylistsToMainPanel();
         }
     }
 }
