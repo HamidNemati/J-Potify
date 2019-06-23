@@ -60,7 +60,7 @@ public class DarkLeftSidePanel extends JPanel implements ActionListener {
             Main.darkFrame.addSongsToMainPanel();
         }else if (e.getSource()==albumsButton){
             System.out.println("ALBUM");
-            Main.darkFrame.addHomeToMainPanel();
+            Main.darkFrame.addAlbumsToMainPanel();
         }
     }
 }

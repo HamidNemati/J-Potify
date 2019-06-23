@@ -116,10 +116,11 @@ public class DarkFrame extends JFrame {
 //        add(songsPanel , BorderLayout.CENTER);
     }
     public void addAlbumsToMainPanel(){
+        remove(playlistPanel );
+        remove(songsPanel );
+        remove(homePanel);
         add(albumsPanel , BorderLayout.CENTER);
-//        add(playlistPanel , BorderLayout.CENTER);
-//        add(homePanel , BorderLayout.CENTER);
-//        add(songsPanel , BorderLayout.CENTER);
+
     }
     public void addPlaylistsToMainPanel(){
         remove(albumsPanel );
