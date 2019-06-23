@@ -106,18 +106,30 @@ public class DarkFrame extends JFrame {
         remove(playlistPanel );
         remove(homePanel);
         add(songsPanel , BorderLayout.CENTER);
+        albumsPanel .setVisible(false);
+        playlistPanel .setVisible(false);
+        homePanel.setVisible(false);
+        songsPanel.setVisible(true);
     }
     public void addHomeToMainPanel(){
-        remove(albumsPanel );
-        remove(playlistPanel );
-        remove(songsPanel);
+//        remove(albumsPanel );
+//        remove(playlistPanel );
+//        remove(songsPanel);
         add(homePanel , BorderLayout.CENTER);
+        albumsPanel .setVisible(false);
+        playlistPanel .setVisible(false);
+        songsPanel.setVisible(false);
+        homePanel.setVisible(true);
     }
     public void addAlbumsToMainPanel(){
         remove(playlistPanel );
         remove(songsPanel );
         remove(homePanel);
         add(albumsPanel , BorderLayout.CENTER);
+        albumsPanel .setVisible(true);
+        playlistPanel .setVisible(false);
+        songsPanel.setVisible(false);
+        homePanel.setVisible(false);
 
     }
     public void addPlaylistsToMainPanel(){
@@ -125,6 +137,10 @@ public class DarkFrame extends JFrame {
         remove(songsPanel );
         remove(homePanel);
         add(playlistPanel , BorderLayout.CENTER);
+        albumsPanel .setVisible(false);
+        playlistPanel .setVisible(true);
+        songsPanel.setVisible(false);
+        homePanel.setVisible(false);
 
     }
 
@@ -163,11 +179,18 @@ public class DarkFrame extends JFrame {
         add(header , BorderLayout.PAGE_START);
         add(rightSidePanel, BorderLayout.EAST);
 
+        add(playlistPanel , BorderLayout.CENTER);
+        add(albumsPanel , BorderLayout.CENTER);
+        add(songsPanel , BorderLayout.CENTER);
+        playlistPanel.setVisible(false);
+        albumsPanel.setVisible(false);
+        songsPanel.setVisible(false);
         add(homePanel , BorderLayout.CENTER);
 
 
 
-        add(HARDCORE , BorderLayout.CENTER);
+
+//        add(HARDCORE , BorderLayout.CENTER);
 
 
 

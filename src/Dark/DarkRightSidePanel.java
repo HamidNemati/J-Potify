@@ -33,10 +33,10 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
         body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
         body.setBackground(MyColors.DarkRightBar);
 
-        myFriends.add(new DarkFriendsInfo("neginhsobhani","Still loving you", "Scorpions"));
         myFriends.add(new DarkFriendsInfo("HAMID","ey vay", "khashayar"));
         myFriends.add(new DarkFriendsInfo("sgr1378","Magnitised", "Tom Odell"));
         myFriends.add(new DarkFriendsInfo("Deli978","Sing Me to Sleep", "Allen Walker"));
+        myFriends.add(new DarkFriendsInfo("neginhsobhani","Still loving you", "Scorpions"));
         myFriends.add(new DarkFriendsInfo("Darya_zm","Sing Me to Sleep", "Allen Walker"));
         myFriends.add(new DarkFriendsInfo("tarrat","KILL4ME", "Marilyn Manson"));
 

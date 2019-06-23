@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9b806d68-3c49-46b3-91a8-f7c8db6ddfa3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/MainPackage/MyColors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/MainPackage/MyColors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dark/DarkFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+            <state relative-caret-position="318">
+              <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
               <folding>
                 <element signature="e#553#554#0" expanded="true" />
                 <element signature="e#583#584#0" expanded="true" />
@@ -129,6 +125,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
               <caret line="83" column="74" selection-start-line="83" selection-start-column="74" selection-end-line="83" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="38" column="92" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -260,7 +268,6 @@
         <option value="$PROJECT_DIR$/src/Dark/DarkPlaylistTitle.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkAddPlaylistFrame.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkFriendsInfo.java" />
-        <option value="$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkAddFriendFrame.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkSighUpFrame.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkUserInfo.java" />
@@ -277,6 +284,7 @@
         <option value="$PROJECT_DIR$/src/MainPackage/MyColors.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" />
+        <option value="$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkFrame.java" />
       </list>
     </option>
@@ -328,7 +336,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561300647259" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561320336472" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../myJPotify/JPotify/src/Dark" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -391,7 +399,7 @@
       <workItem from="1561052707976" duration="6364000" />
       <workItem from="1561110320234" duration="235000" />
       <workItem from="1561110594325" duration="5411000" />
-      <workItem from="1561131929873" duration="73560000" />
+      <workItem from="1561131929873" duration="74665000" />
     </task>
     <task id="LOCAL-00001" summary="fgfg">
       <created>1561267862775</created>
@@ -435,11 +443,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561299653134</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add gradient background to headeer of a playlist main panel">
+      <created>1561319223195</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561319223195</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237732000" />
+    <option name="totallyTimeSpent" value="238837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -609,16 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkPlaylistTitle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-85">
@@ -756,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dark/DarkMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkMusicInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1439">
@@ -834,10 +829,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dark/DarkRightSidePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="38" column="92" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dark/DarkMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+        <state relative-caret-position="318">
+          <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
           <folding>
             <element signature="e#553#554#0" expanded="true" />
             <element signature="e#583#584#0" expanded="true" />
