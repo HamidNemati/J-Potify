@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9b806d68-3c49-46b3-91a8-f7c8db6ddfa3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/MainPackage/MyColors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/MainPackage/MyColors.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainPackage/MyColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPackage/MyColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+            <state relative-caret-position="131">
+              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
               <folding>
                 <element signature="e#553#554#0" expanded="true" />
                 <element signature="e#583#584#0" expanded="true" />
@@ -68,27 +71,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dark/DarkLeftSidePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainPackage/MyIcons.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkPlaylistPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -112,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkSongPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="98" column="59" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="59" />
+            <state relative-caret-position="-767">
+              <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkMainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+            <state relative-caret-position="247">
+              <caret line="83" column="74" selection-start-line="83" selection-start-column="74" selection-end-line="83" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -289,13 +271,13 @@
         <option value="$PROJECT_DIR$/src/MainPackage/ColoredThumbSliderUI.java" />
         <option value="$PROJECT_DIR$/src/MainPackage/Main.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkLeftSidePanel.java" />
-        <option value="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" />
         <option value="$PROJECT_DIR$/src/MainPackage/MyIcons.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkHeader.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkPlaylistPanel.java" />
-        <option value="$PROJECT_DIR$/src/Dark/DarkFrame.java" />
         <option value="$PROJECT_DIR$/src/MainPackage/MyColors.java" />
+        <option value="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" />
         <option value="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" />
+        <option value="$PROJECT_DIR$/src/Dark/DarkFrame.java" />
       </list>
     </option>
   </component>
@@ -346,7 +328,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561299566674" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561300647259" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../myJPotify/JPotify/src/Dark" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -409,7 +391,7 @@
       <workItem from="1561052707976" duration="6364000" />
       <workItem from="1561110320234" duration="235000" />
       <workItem from="1561110594325" duration="5411000" />
-      <workItem from="1561131929873" duration="71859000" />
+      <workItem from="1561131929873" duration="73560000" />
     </task>
     <task id="LOCAL-00001" summary="fgfg">
       <created>1561267862775</created>
@@ -446,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561298420303</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add gradient background to headeer of a playlist main panel">
+      <created>1561299653134</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561299653134</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236031000" />
+    <option name="totallyTimeSpent" value="237732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -461,7 +450,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18305598" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18305598" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.3289689" />
@@ -470,7 +459,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50075644" side_tool="true" weight="0.2405892" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32569557" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49924356" visible="true" weight="0.28968903" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49924356" visible="true" weight="0.28968903" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
@@ -486,6 +475,37 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18305598" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50075644" side_tool="true" weight="0.2405892" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49924356" visible="true" weight="0.28968903" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Theme Preview" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -507,7 +527,8 @@
     <MESSAGE value="album corrected" />
     <MESSAGE value="song panel improved" />
     <MESSAGE value="actionListenner added to some playlist button" />
-    <option name="LAST_COMMIT_MESSAGE" value="actionListenner added to some playlist button" />
+    <MESSAGE value="add gradient background to headeer of a playlist main panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gradient background to headeer of a playlist main panel" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Dark/LightFooter.java" />
@@ -752,23 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dark/DarkSongPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="98" column="59" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPackage/MyIcons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkHeader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
@@ -786,10 +790,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainPackage/MyColors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainPackage/MyIcons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkLeftSidePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="444">
           <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dark/DarkSongPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-767">
+          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dark/DarkMainPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="83" column="74" selection-start-line="83" selection-start-column="74" selection-end-line="83" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -798,8 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+        <state relative-caret-position="131">
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="e#553#554#0" expanded="true" />
             <element signature="e#583#584#0" expanded="true" />
@@ -841,23 +879,6 @@
             <element signature="e#2165#2166#0" expanded="true" />
             <element signature="e#2220#2221#0" expanded="true" />
             <element signature="e#2260#2261#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPackage/MyColors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dark/DarkMainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

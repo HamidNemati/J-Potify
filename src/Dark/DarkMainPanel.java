@@ -71,16 +71,20 @@ public class DarkMainPanel extends JPanel implements ActionListener {
         }else  if(headerName.equals("SONGS")){
             body.setLayout(new BorderLayout());
             JPanel songsList = new JPanel();
-//            songsList.setLayout(new GridLayout(15,1));
             songsList.setLayout(new BoxLayout(songsList , BoxLayout.Y_AXIS));
+            songsList.setBackground(MyColors.Trancparent);
             songsList.setMinimumSize(new Dimension(1000,500));
             songsList.setMaximumSize(new Dimension(1000,500));
             addSong = new JButton("addSong");
             addSong.addActionListener(this);
             body.add(addSong , BorderLayout.NORTH);
-            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
+            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,true, "4:09"));
             songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
-            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
+            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+            songsArraylist.add(new DarkSongPanel("KILL4ME","Marilyn Manson",false,false, "4:09"));
+            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+
 
             for (DarkSongPanel i: songsArraylist){
                 songsList.add(i);

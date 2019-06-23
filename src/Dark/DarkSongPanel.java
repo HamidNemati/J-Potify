@@ -31,13 +31,13 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         setMaximumSize(new Dimension(1200,30));
         musicName = new JLabel(song);
         musicName.setFont(MyFonts.arial);
-        musicName.setBackground(MyColors.DarkFooter);
+        musicName.setBackground(MyColors.Trancparent);
         musicName.setForeground(MyColors.DarkTextColor);
 //        add(musicName );
         JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
         artistName = new JLabel(artist);
         artistName.setFont(MyFonts.arial);
-        artistNamePanel.setBackground(MyColors.DarkFooter);
+        artistNamePanel.setBackground(MyColors.Trancparent);
         artistName.setForeground(MyColors.DarkTextColor);
         artistNamePanel.add(artistName);
 //        add(artistName );
@@ -50,7 +50,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorderPainted(false);
         likeButton.setFocusable(false);
         likeButton.setBorder(new EmptyBorder(0,0,0,0));
-        likeButton.setBackground(MyColors.DarkFooter);
+        likeButton.setBackground(MyColors.Trancparent);
         likeButton.addActionListener(this);
         likeButton.setActionCommand("replay");
 //        add(likeButton);
@@ -63,14 +63,14 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         shareButton.setBorderPainted(false);
         shareButton.setFocusable(false);
         shareButton.setBorder(new EmptyBorder(0,0,0,0));
-        shareButton.setBackground(MyColors.DarkFooter);
+        shareButton.setBackground(MyColors.Trancparent);
         shareButton.addActionListener(this);
         shareButton.setActionCommand("replay");
 //        add(shareButton );
 
         time = new JLabel(durition);
         time.setFont(MyFonts.arial);
-        setBackground(MyColors.DarkFooter);
+        setBackground(MyColors.Trancparent);
         time.setForeground(MyColors.DarkTextColor);
 
 //        add(time );
@@ -84,15 +84,17 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorder(new EmptyBorder(0,5,0,5));
         buttons.add(likeButton);
         buttons.add(shareButton);
+        buttons.setBackground(MyColors.Trancparent);
         add(buttons , BorderLayout.WEST);
 //        JPanel songInfo = new JPanel(new BorderLayout());
 //        songInfo.add(musicName , BorderLayout.CENTER);
 //        songInfo.add(artistName, BorderLayout.EAST);
         JPanel songInfo = new JPanel(new GridLayout());
+        songInfo.setBackground(MyColors.Trancparent);
         songInfo.add(musicName );
         songInfo.add(artistName);
         songInfo.setBorder(new EmptyBorder(5,5,5,5));
-        songInfo.setBackground(MyColors.DarkFooter);
+        songInfo.setBackground(MyColors.Trancparent);
         time.setBorder(new EmptyBorder(5,0,5,5));
         add(songInfo , BorderLayout.CENTER);
         add(time , BorderLayout.EAST);
