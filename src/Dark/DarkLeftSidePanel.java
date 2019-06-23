@@ -10,6 +10,10 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class DarkLeftSidePanel extends JPanel {
+    private JButton songsButton;
+    private JButton albumsButton;
+    private DarkPlaylistPanel playlistPanel;
+
     public DarkLeftSidePanel(){
         super();
         setBackground(MyColors.DarkFooter);
@@ -17,32 +21,32 @@ public class DarkLeftSidePanel extends JPanel {
 
         JPanel artworkPanel = new JPanel();// for showing music artwork
         JLabel artwork = new JLabel();
+        artwork.setMinimumSize(new Dimension(200,200));
+        artwork.setMaximumSize(new Dimension(200,200));
         artwork.setIcon(MyIcons.DarkNoArtwork);
         artworkPanel.add(artwork , BorderLayout.CENTER);
         add(artwork, BorderLayout.SOUTH);
 
-//        JPanel buttonsAndPlaylists = new JPanel(new GridLayout(6,1));// the part that contain buttons such as "playlists" and ...
         JPanel buttonsAndPlaylists = new JPanel(new BorderLayout());// the part that contain buttons such as "playlists" and ...
         buttonsAndPlaylists.setBackground(MyColors.DarkFooter);
         buttonsAndPlaylists.setBackground(MyColors.DarkTextColor);
 
 
-        JButton songsButton = new JButton(MyIcons.DarkSongsButton);
+        songsButton = new JButton(MyIcons.DarkSongsButton);
+        //songsButton.addActionListener(DarkMainPanel);
         songsButton.setBorder(new EmptyBorder(0,0,0,0));
 
 //        buttonsAndPlaylists.add(playlistButton );
-        JButton albumsButton = new JButton(MyIcons.DarkAlbumsButton);
+        albumsButton = new JButton(MyIcons.DarkAlbumsButton);
         albumsButton.setBorder(new EmptyBorder(0,0,0,0));
 //        buttonsAndPlaylists.add(addPlaylistButton );
         JPanel songsAndAlbumButtons = new JPanel(new GridLayout(2,1));
         songsAndAlbumButtons.add(songsButton);
         songsAndAlbumButtons.add(albumsButton);
         buttonsAndPlaylists.add(songsAndAlbumButtons, BorderLayout.NORTH);
-        DarkPlaylistPanel playlistPanel = new DarkPlaylistPanel();
+        playlistPanel = new DarkPlaylistPanel();
         playlistPanel.setBackground(MyColors.DarkLeftBar);
         buttonsAndPlaylists.add(playlistPanel , BorderLayout.CENTER);
-
-
         add(buttonsAndPlaylists , BorderLayout.CENTER);
     }
 }

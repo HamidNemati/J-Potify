@@ -20,6 +20,7 @@ public class DarkFooter extends JPanel {
 
         DarkMusicController musicController = new DarkMusicController(playOrPaused);
         musicController.setBorder(new EmptyBorder(0,0,10,0));
+        musicController.setMaximumSize(new Dimension(600,100));
         add(musicController, BorderLayout.CENTER);
 
         DarkVolumePanel volumePanel = new DarkVolumePanel();

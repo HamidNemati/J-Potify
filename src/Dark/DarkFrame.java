@@ -8,14 +8,16 @@ import java.awt.*;
 
 public class DarkFrame extends JFrame {
     private Dimension minimum = new Dimension(1000,700);
-    DarkFooter footer ;
-    DarkHeader header ;
-    DarkRightSidePanel rightSidePanel ;
-    DarkLeftSidePanel leftBar;
-    DarkMainPanel homePanel;
-    DarkMainPanel playlistPanel;
-    DarkMainPanel songsPanel;
-    DarkMainPanel albumsPanel;
+    private DarkFooter footer ;
+    private DarkHeader header ;
+    private DarkRightSidePanel rightSidePanel ;
+    private DarkLeftSidePanel leftBar;
+    private DarkMainPanel homePanel;
+    private DarkMainPanel playlistPanel;
+    private DarkMainPanel songsPanel;
+    private DarkMainPanel albumsPanel;
+
+    private DarkMainPanel HARDCORE;
 
 
 
@@ -32,6 +34,7 @@ public class DarkFrame extends JFrame {
         songsPanel = new DarkMainPanel("SONGS");
         playlistPanel = new DarkMainPanel("PLAYLISTS");
         albumsPanel = new DarkMainPanel("ALBUMS");
+        HARDCORE = new DarkMainPanel(1);
 
 
         setBackground(MyColors.DarkBackground);
@@ -50,10 +53,17 @@ public class DarkFrame extends JFrame {
         add(leftBar, BorderLayout.WEST);
         add(header , BorderLayout.PAGE_START);
         add(rightSidePanel, BorderLayout.EAST);
-        //add(homePanel , BorderLayout.CENTER);
-        add(songsPanel , BorderLayout.CENTER);
+
         add(albumsPanel , BorderLayout.CENTER);
         add(playlistPanel , BorderLayout.CENTER);
+        add(homePanel , BorderLayout.CENTER);
+        add(songsPanel , BorderLayout.CENTER);
+
+        add(HARDCORE , BorderLayout.CENTER);
+
+
+
+
 
 
         setVisible(true);

@@ -38,9 +38,12 @@ public class MyIcons {
     public static ImageIcon Lightlike = new ImageIcon("icons\\50x50\\light\\like.png");
     public static ImageIcon LightShared = new ImageIcon("icons\\50x50\\light\\shared.png");
     public static ImageIcon Lightliked = new ImageIcon("icons\\50x50\\light\\liked.png");
-    public static ImageIcon LightPartition = new ImageIcon("icons\\50x50\\lighr\\partiotion_vertical_line.png");
-
-
+    public static ImageIcon LightPartition = new ImageIcon("icons\\50x50\\light\\partiotion_vertical_line.png");
+    public static ImageIcon LightSharedPlayListTitle = new ImageIcon("icons\\50x50\\light\\sharedPlaylistTitle.png");
+    public static ImageIcon LightFavouritePlayListTitle = new ImageIcon("icons\\50x50\\light\\favouritePlayListTitle.png");
+    public static ImageIcon LightNormalPlayListTitle = new ImageIcon("icons\\50x50\\light\\normalPlaylistTitle.png");
+    public static ImageIcon LightFriendsActivitHorizentalPartition = new ImageIcon("icons\\50x50\\light\\friends activity horizental partition.png");
+    public static ImageIcon LightAddFriend = new ImageIcon("icons\\50x50\\light\\addFriend.png");
 
 
 
@@ -75,7 +78,6 @@ public class MyIcons {
     public static ImageIcon DarkVolume4 = new ImageIcon("icons\\50x50\\dark\\v4.png");
     public static ImageIcon DarkUser = new ImageIcon("icons\\50x50\\dark\\user.png");
     public static ImageIcon DarkFriendsActivity = new ImageIcon("icons\\50x50\\dark\\friends_activity.png");
-    public static ImageIcon DarkSharedPlayListTitle = new ImageIcon("icons\\50x50\\dark\\sharedPlaylistTitle.png");
     public static ImageIcon DarkTitleLeft = new ImageIcon("icons\\50x50\\dark\\titleLeft.png");
     public static ImageIcon DarkTitleRight = new ImageIcon("icons\\50x50\\dark\\titleRight.png");
     public static ImageIcon DarkShare = new ImageIcon("icons\\50x50\\dark\\share.png");
@@ -83,6 +85,13 @@ public class MyIcons {
     public static ImageIcon DarkShared = new ImageIcon("icons\\50x50\\dark\\shared.png");
     public static ImageIcon Darkliked = new ImageIcon("icons\\50x50\\dark\\liked.png");
     public static ImageIcon DarkPartition = new ImageIcon("icons\\50x50\\dark\\partiotion_vertical_line.png");
+    public static ImageIcon DarkSharedPlayListTitle = new ImageIcon("icons\\50x50\\dark\\sharedPlaylistTitle.png");
+    public static ImageIcon DarkFavouritePlayListTitle = new ImageIcon("icons\\50x50\\dark\\favouritePlayListTitle.png");
+    public static ImageIcon DarkNormalPlayListTitle = new ImageIcon("icons\\50x50\\dark\\normalPlaylistTitle.png");
+    public static ImageIcon DarkFriendsActivitHorizentalPartition = new ImageIcon("icons\\50x50\\dark\\friends activity horizental partition.png");
+    public static ImageIcon DarkAddFriend = new ImageIcon("icons\\50x50\\dark\\addFriend.png");
+
+
 
 
 

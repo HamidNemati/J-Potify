@@ -7,75 +7,78 @@ import MainPackage.MyIcons;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-//public class DarkPlaylistPanel extends JPanel implements Scrollable{
-public class DarkPlaylistPanel extends JPanel {
+public class DarkPlaylistPanel extends JPanel implements ActionListener {
     JList list;
-//    ArrayList<String> playlistsArraylist = new ArrayList<>();
-    ArrayList<DarkPlaylistTitle> playlistsArraylist = new ArrayList<>();
-
+    ArrayList<DarkPlaylistTitle> playlistsArraylist;
+    JButton addPlaylistButton;
+    JPanel playlistsList;
+    DarkPlaylistTitle sharedPlaylist;
+    DarkPlaylistTitle favouritePlaylist;
 
 
     public DarkPlaylistPanel(){
         super();
-//        playlistsArraylist.add(new DarkPlaylistTitle("Shared Playlist"));
-
-//        playlistsArraylist.add("B");
-//        playlistsArraylist.add("C");
-
+        playlistsArraylist = new ArrayList<>();
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkLeftBar);
         JLabel playlistButton = new JLabel(MyIcons.DarkPlaylistButton);//playlist button
         add(playlistButton , BorderLayout.NORTH );
 
-        JPanel playlistsList = new JPanel(new BorderLayout());// a panel that shows all of the playlists
+//        JPanel playlistsList = new JPanel(new BorderLayout());// a panel that shows all of the playlists
+        playlistsList = new JPanel();// a panel that shows all of the playlists
+        playlistsList.setLayout(new BoxLayout(playlistsList , BoxLayout.Y_AXIS));
         playlistsList.setBackground(MyColors.DarkLeftBar);
 
-        String week[]= { "Lo-Fi beats","car"};
 
-//        list = new JList(week);
-        list = new JList(playlistsArraylist.toArray());
-        list.setBackground(MyColors.DarkLeftBar);
-        list.setForeground(MyColors.DarkTextColor);
-        list.setSelectionBackground(MyColors.DarkTextColor);
-        list.setSelectionForeground(MyColors.DarkLeftBar);
-        list.setFont(MyFonts.arial);
-        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        list.setLayoutOrientation(JList.VERTICAL);
-        playlistsList.add(list);
 
-//        JScrollPane scroll = new JScrollPane(playlistsList);
-//        this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        sharedPlaylist = new DarkPlaylistTitle("Shared Playlist");
+        favouritePlaylist = new DarkPlaylistTitle("Favourite Playlist");
+        playlistsArraylist.add(sharedPlaylist);
+        playlistsArraylist.add(favouritePlaylist);
+        playlistsArraylist.add(new DarkPlaylistTitle("HARDCORE"));
+        playlistsArraylist.add(new DarkPlaylistTitle("GoWithFlow"));
+
+
+        for (DarkPlaylistTitle i : playlistsArraylist){
+            playlistsList.add(i);
+        }
+
+        JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setPreferredSize(new Dimension(10, 600));
+        scrollPane.setBackground(Color.MAGENTA);
+        scrollPane.setBackground(Color.ORANGE);
+        scrollPane.setAlignmentX(LEFT_ALIGNMENT);
+
+        add(scrollPane);
+
         add(playlistsList, BorderLayout.CENTER);
 
-//        DefaultListModel<String> l1 = new DefaultListModel<>();
-//        l1.addElement("Item1");
-//        l1.addElement("Item2");
-//        l1.addElement("Item3");
-//        l1.addElement("Item4");
-//        JList<String> list = new JList<>(l1);
-//        list.setBounds(100,100, 75,75);
-//        playlistsList.add(list);
-
-//        final JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 48, 0, 255);
-//        int height = scrollBar.getPreferredSize( ).height;
-//        scrollBar.setPreferredSize(new Dimension(20, height));
-//        scrollBar.setForeground(MyColors.DarkFooter);
-//        scrollBar.setBackground(MyColors.DarkFooter);
-
-//        add(scrollBar , BorderLayout.EAST);
-
-//        JScrollPane scrollPane = new JScrollPane(list);
-//        scrollPane.setMinimumSize(new Dimension(100, 50));
+//        add(scrollPane, BorderLayout.CENTER);
 
 
-
-        JButton addPlaylistButton = new JButton(MyIcons.DarkAddPlaylistButton);
+        addPlaylistButton = new JButton(MyIcons.DarkAddPlaylistButton);
+        addPlaylistButton.addActionListener(this);
         addPlaylistButton.setBorder(new EmptyBorder(0,0,0,0));
         add(addPlaylistButton , BorderLayout.SOUTH);
-
     }
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        if(source==addPlaylistButton){
+            DarkAddPlaylistFrame addPlaylistFrame = new DarkAddPlaylistFrame();
+            System.out.println("playlist added");
+            DarkPlaylistTitle newPlaylist = new DarkPlaylistTitle("New Playlist");
+            playlistsList = new JPanel();
+            playlistsArraylist.add(newPlaylist);
+            playlistsList.add(newPlaylist);
+            for (DarkPlaylistTitle i : playlistsArraylist){
+                playlistsList.add(i);
+            }
+        }
+    }
 }
