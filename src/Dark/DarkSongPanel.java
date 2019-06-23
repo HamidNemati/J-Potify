@@ -21,9 +21,12 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 //    public DarkSongPanel(){
     public DarkSongPanel(String song, String artist, boolean like , boolean share ,String durition){
         super(new FlowLayout());
+//        super(new GridLayout(1,5));
 
 
 
+        setMinimumSize(new Dimension(900,50));
+        setMaximumSize(new Dimension(900,50));
         musicName = new JLabel(song);
         musicName.setFont(MyFonts.arial);
         musicName.setBackground(MyColors.DarkFooter);
@@ -51,7 +54,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 //        add(likeButton);
 
         shareButton = new JButton();
-        if(like)
+        if(share)
             shareButton.setIcon(MyIcons.DarkShared);
         else
             shareButton.setIcon(MyIcons.DarkShare);

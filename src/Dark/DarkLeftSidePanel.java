@@ -1,26 +1,28 @@
 package Dark;
 
 import MainPackage.MyColors;
-import MainPackage.MyIcons;
+import MainPackage.*;
 import com.sun.deploy.panel.NodeBorder;
 import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DarkLeftSidePanel extends JPanel {
+public class DarkLeftSidePanel extends JPanel implements ActionListener {
     private JButton songsButton;
     private JButton albumsButton;
     private DarkPlaylistPanel playlistPanel;
-
-    public DarkLeftSidePanel(){
+    private JLabel artwork;
+    public DarkLeftSidePanel (){
         super();
         setBackground(MyColors.DarkFooter);
         setLayout(new BorderLayout());
 
         JPanel artworkPanel = new JPanel();// for showing music artwork
-        JLabel artwork = new JLabel();
+        artwork = new JLabel();
         artwork.setMinimumSize(new Dimension(200,200));
         artwork.setMaximumSize(new Dimension(200,200));
         artwork.setIcon(MyIcons.DarkNoArtwork);
@@ -33,11 +35,12 @@ public class DarkLeftSidePanel extends JPanel {
 
 
         songsButton = new JButton(MyIcons.DarkSongsButton);
-        //songsButton.addActionListener(DarkMainPanel);
+        songsButton.addActionListener(this);
         songsButton.setBorder(new EmptyBorder(0,0,0,0));
 
 //        buttonsAndPlaylists.add(playlistButton );
         albumsButton = new JButton(MyIcons.DarkAlbumsButton);
+        albumsButton.addActionListener(this);
         albumsButton.setBorder(new EmptyBorder(0,0,0,0));
 //        buttonsAndPlaylists.add(addPlaylistButton );
         JPanel songsAndAlbumButtons = new JPanel(new GridLayout(2,1));
@@ -48,5 +51,16 @@ public class DarkLeftSidePanel extends JPanel {
         playlistPanel.setBackground(MyColors.DarkLeftBar);
         buttonsAndPlaylists.add(playlistPanel , BorderLayout.CENTER);
         add(buttonsAndPlaylists , BorderLayout.CENTER);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==songsButton){
+            System.out.println("SONGS");
+            Main.darkFrame.addSongsToMainPanel();
+        }else if (e.getSource()==albumsButton){
+            System.out.println("ALBUM");
+            Main.darkFrame.addHomeToMainPanel();
+        }
     }
 }

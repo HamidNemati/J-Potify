@@ -71,13 +71,14 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             body.setBorder(new EmptyBorder(5,20,20,20));
         }else  if(headerName.equals("SONGS")){
             JPanel songsList = new JPanel();
-            body.setLayout(new BoxLayout(body , BoxLayout.Y_AXIS));
-            songsList.setMinimumSize(new Dimension(600,500));
-            songsList.setMaximumSize(new Dimension(600,500));
+//            body.setLayout(new BoxLayout(body , BoxLayout.Y_AXIS));
+            songsList.setLayout(new GridLayout(15,1));
+            songsList.setMinimumSize(new Dimension(900,500));
+            songsList.setMaximumSize(new Dimension(900,500));
             songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
             songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
             songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,false, "4:09"));
-
+            body.setBackground(Color.MAGENTA);
             for (DarkSongPanel i: songsArraylist){
                 songsList.add(i);
             }

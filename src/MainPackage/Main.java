@@ -10,9 +10,10 @@ import java.util.Scanner;
 public class Main {
     public static boolean playOrPause = false;// true = playing(pause icon) ... false = paused(play icon)
     public static boolean SuffleOrNot = false;
+    public static DarkFrame  darkFrame;
     public static boolean replayAllOrNot = false;
     public static void main(String[] args) {
-         DarkFrame darkFrame = new DarkFrame(playOrPause);
+        darkFrame = new DarkFrame(playOrPause);
 //         Scanner scanner = new Scanner(System.in);
 //         int x = scanner.nextInt();
 //         playOrPause=true;
