@@ -1,12 +1,17 @@
 package Dark;
 
+import Logic.Song;
 import MainPackage.MyColors;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class DarkFooter extends JPanel {
+
+    public static DarkMusicInfo darkMusicInfo;
+
     public DarkFooter(boolean playOrPaused) throws Exception {
         super();
         setBackground(MyColors.DarkFooter);
@@ -14,9 +19,14 @@ public class DarkFooter extends JPanel {
         setLayout(new GridLayout(1,3));
         setBackground(MyColors.DarkFooter);
 
-        DarkMusicInfo musicInfo = new DarkMusicInfo(false , false , "Something to remind you" , "Staind");
-        musicInfo.setBorder(new EmptyBorder(20,10,20,0));
-        add(musicInfo, BorderLayout.WEST);
+        if (DarkControlButtons.player.getCurrentSong() != null)
+            darkMusicInfo = new DarkMusicInfo(DarkControlButtons.player.getCurrentSong());
+        else {
+            darkMusicInfo = new DarkMusicInfo("Song Name" , "Artist Name");
+        }
+        darkMusicInfo.setBorder(new EmptyBorder(20,10,20,0));
+        this.add(darkMusicInfo ,  BorderLayout.WEST);
+
 
         DarkMusicController musicController = new DarkMusicController(playOrPaused);
         musicController.setBorder(new EmptyBorder(0,0,10,0));
@@ -26,5 +36,11 @@ public class DarkFooter extends JPanel {
         DarkVolumePanel volumePanel = new DarkVolumePanel();
         volumePanel.setBorder(new EmptyBorder(16,0,0,20));
         add(volumePanel, BorderLayout.EAST);
+
+
+    }
+
+    public static void setDarkMusicInfo(DarkMusicInfo darkMusicInfo) {
+        DarkFooter.darkMusicInfo = darkMusicInfo;
     }
 }

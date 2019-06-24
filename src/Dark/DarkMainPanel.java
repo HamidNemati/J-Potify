@@ -4,7 +4,6 @@ import Logic.Song;
 import MainPackage.*;
 import com.mpatric.mp3agic.Mp3File;
 
-import javax.management.monitor.CounterMonitor;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -18,7 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DarkMainPanel extends JPanel implements ActionListener {
-    private Thread DarkSongPanelThread ;
     private JPanel title;
     private JPanel body;
     private JPanel homePlayListPanel;
@@ -26,7 +24,10 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     private JButton addSong;
     private ArrayList<DarkSongPanel> songPanelsArraylist;
     private JFileChooser fileChooser;
-    JPanel songsList;
+    private JPanel songsList;
+    String filePath;
+    String filename;
+
 
     public DarkMainPanel(String headerName){// non playlist pages
         super();
@@ -96,15 +97,17 @@ public class DarkMainPanel extends JPanel implements ActionListener {
 //            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
 
 
-
+//            for (DarkSongPanel i: songPanelsArraylist ){
+//                songsList.add(i);
+//            }
+            body.setBorder(new EmptyBorder(5,20,20,20));
+            body.add(songsList , BorderLayout.CENTER);
         }else  if(headerName.equals("ALBUMS")){
 
             body.setBorder(new EmptyBorder(5,20,20,20));
         }
 
         add(body, BorderLayout.CENTER);
-        DarkSongPanelThread = new Thread(runnableDarkSongPanels);
-        DarkSongPanelThread.start();
     }
     ///////////////////////////////////////////////////////////////////////////////
 //    public DarkMainPanel(Playlist playlist){
@@ -116,7 +119,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             if (DarkControlButtons.player.getPlayThread().isAlive()) {
                 DarkControlButtons.player.getPlayThread().interrupt();
             }
-            fileChooser = new JFileChooser("C:\\Users\\Hamid\\Desktop\\JPOTIFY");
+            fileChooser = new JFileChooser("C:");
             fileChooser.setBackground(Color.darkGray);
             fileChooser.setCurrentDirectory(new File("C:\\Users\\hamid\\Downloads\\Telegram Desktop"));
             fileChooser.setDialogTitle("Select Mp3");
@@ -124,15 +127,21 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             fileChooser.setFileFilter(new FileNameExtensionFilter("Mp3 files", "mp3"));
             if (fileChooser.showOpenDialog(addSong) == JFileChooser.APPROVE_OPTION) {
 
-                String filename = fileChooser.getSelectedFile().getName();
-                String filePath = fileChooser.getSelectedFile().getPath();
+                filename = fileChooser.getSelectedFile().getName();
+                System.out.println(filename);
+                filePath = fileChooser.getSelectedFile().getPath();
                 try {
                     Song song = new Song(filePath , filename);
+                    DarkControlButtons.player.songs.add(song);
                     songPanelsArraylist.add(song.getDarkSongPanel());
-
+                    this.add(song.getDarkSongPanel());
+                    songsList.add(song.getDarkSongPanel());
+                    songsList.setVisible(false);
+                    songsList.setVisible(true);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
+
 
 //                JLabel artWork = new JLabel();
 
@@ -142,18 +151,4 @@ public class DarkMainPanel extends JPanel implements ActionListener {
         }
 
     }
-
-
-    Runnable runnableDarkSongPanels = new Runnable() {
-        @Override
-        public void run() {
-            while (true) {
-                for (DarkSongPanel i : songPanelsArraylist) {
-                    songsList.add(i);
-                }
-                body.setBorder(new EmptyBorder(5, 20, 20, 20));
-                body.add(songsList, BorderLayout.CENTER);
-            }
-        }
-    };
 }

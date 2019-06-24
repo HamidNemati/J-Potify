@@ -25,10 +25,13 @@ public class DarkLeftSidePanel extends JPanel implements ActionListener {
         artwork = new JLabel();
         artwork.setMinimumSize(new Dimension(200,200));
         artwork.setMaximumSize(new Dimension(200,200));
-        if (DarkControlButtons.player.getSong().isHasId3v2Tag()){
-            artwork.setIcon(DarkControlButtons.player.getSong().getArtWork());
+        if (DarkControlButtons.player.getCurrentSong() != null){
+            if (DarkControlButtons.player.getCurrentSong().isHasId3v2Tag()) {
+                artwork.setIcon(DarkControlButtons.player.getCurrentSong().getArtWork());
+            }
         }else
             artwork.setIcon(MyIcons.DarkNoArtwork);
+
 
 
         artworkPanel.add(artwork , BorderLayout.CENTER);

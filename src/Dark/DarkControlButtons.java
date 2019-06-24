@@ -147,10 +147,35 @@ public class DarkControlButtons extends JPanel implements ActionListener {
         }
 
         if (action.equals("next")) {//next
+            int index = player.getCurrentPlayList().indexOf(player.getCurrentSong());
+            if (player.getCurrentPlayList().size() > index){
+                player.getPlayThread().stop();
+                player.setCurrentSong(player.getCurrentPlayList().get(index + 1));
+                if(playOrPauseParameter){
+                    playOrPause.setIcon(MyIcons.DarkPlay);
+                    playOrPauseParameter = false;
+                    if (player.getPlayThread().isAlive())
+                        player.getPlayThread().suspend();
+                    System.out.println("paused...");
+                }
+            }else System.out.println("Next song doesnt exist!");
             System.out.println("next button pressed!");
         }
         if (action.equals("previous")) {//previous
-            System.out.println("previous button pressed!");
+            int index = player.getCurrentPlayList().indexOf(player.getCurrentSong());
+            if (index > 0){
+                player.getPlayThread().stop();
+                player.setCurrentSong(player.getCurrentPlayList().get(index - 1));
+                if(playOrPauseParameter){
+                    playOrPause.setIcon(MyIcons.DarkPlay);
+                    playOrPauseParameter = false;
+                    if (player.getPlayThread().isAlive())
+                        player.getPlayThread().suspend();
+                    System.out.println("paused...");
+                }
+                System.out.println("previous button pressed!");
+            }else System.out.println("Previous song does'nt exist");
+
         }
     }
 }

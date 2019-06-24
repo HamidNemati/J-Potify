@@ -26,6 +26,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
     JButton playAndPause;
     JButton more;
     JPanel buttons;
+    JPanel songInfo;
 
     //    public DarkSongPanel(){
     public DarkSongPanel(Song song){
@@ -135,7 +136,9 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 //        JPanel songInfo = new JPanel(new BorderLayout());
 //        songInfo.add(musicName , BorderLayout.CENTER);
 //        songInfo.add(artistName, BorderLayout.EAST);
-        JPanel songInfo = new JPanel(new GridLayout());
+        songInfo = new JPanel(new GridLayout());
+        musicName.setText(song.getName());
+        artistName.setText(song.getArtist());
         songInfo.setBackground(MyColors.DarkMenu);
         songInfo.add(musicName );
         songInfo.add(artistName);
