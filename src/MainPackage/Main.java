@@ -12,8 +12,9 @@ public class Main {
     public static boolean SuffleOrNot = false;
     public static DarkFrame  darkFrame;
     public static boolean replayAllOrNot = false;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         darkFrame = new DarkFrame(playOrPause);
+
 //         Scanner scanner = new Scanner(System.in);
 //         int x = scanner.nextInt();
 //         playOrPause=true;

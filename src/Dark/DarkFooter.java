@@ -7,7 +7,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class DarkFooter extends JPanel {
-    public DarkFooter(boolean playOrPaused){
+    public DarkFooter(boolean playOrPaused) throws Exception {
         super();
         setBackground(MyColors.DarkFooter);
 //        setLayout(new BorderLayout());

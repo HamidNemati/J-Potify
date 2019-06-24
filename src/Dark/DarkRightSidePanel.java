@@ -41,6 +41,7 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
         myFriends.add(new DarkFriendsInfo("tarrat","KILL4ME", "Marilyn Manson"));
 
 
+
         for(DarkFriendsInfo i : myFriends){
             body.add(i);
         }

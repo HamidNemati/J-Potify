@@ -1,7 +1,9 @@
 package Dark;
 
+import Logic.Player;
 import MainPackage.MyColors;
 import MainPackage.MyIcons;
+import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -20,14 +22,17 @@ public class DarkControlButtons extends JPanel implements ActionListener {
     JButton next = new JButton(MyIcons.DarkNext);
     JButton previous = new JButton(MyIcons.DarkPrevious);
     JButton shuffle = new JButton(MyIcons.DarkShuffleOff);
+    static Player player ;
 
 
 
 
 
 
-    public DarkControlButtons(boolean playOrPaused){
+    public DarkControlButtons(boolean playOrPaused) throws Exception {
         super();
+
+        player = new Player();
         setLayout(new GridLayout(1,5));
         setBackground(MyColors.DarkFooter);
 
@@ -102,10 +107,15 @@ public class DarkControlButtons extends JPanel implements ActionListener {
             if(playOrPauseParameter){
                 playOrPause.setIcon(MyIcons.DarkPlay);
                 playOrPauseParameter = false;
+                if (player.getPlayThread().isAlive())
+                    player.getPlayThread().suspend();
                 System.out.println("paused...");
             }else{
                 playOrPause.setIcon(MyIcons.DarkPause);
                 playOrPauseParameter = true;
+                if (player.getPlayThread().isAlive())
+                    player.getPlayThread().resume();
+                else player.getPlayThread().start();
                 System.out.println("playing...");
             }
         }

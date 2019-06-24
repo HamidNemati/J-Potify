@@ -9,7 +9,7 @@ public class DarkMusicController extends JPanel {
     JLabel timeGone;
     JLabel timeLeft;
     JSlider timeLine;
-    public DarkMusicController(boolean playOrPaused){
+    public DarkMusicController(boolean playOrPaused) throws Exception {
         super();
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkFooter);
@@ -18,6 +18,7 @@ public class DarkMusicController extends JPanel {
         JPanel timeLinePanel = new JPanel(new BorderLayout());
 //        JPanel timeLine = new JPanel();
          timeLine = new JSlider();
+         timeLine.setValue(0);
         timeLine.setBackground(MyColors.DarkFooter);
         timeGone = new JLabel("0:20");
         timeGone.setForeground(MyColors.DarkTextColor);

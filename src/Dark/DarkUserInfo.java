@@ -3,8 +3,8 @@ package Dark;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
-import MainPackage.User;
-import com.sun.deploy.panel.JavaPanel;
+//import MainPackage.User;
+//import com.sun.deploy.panel.JavaPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

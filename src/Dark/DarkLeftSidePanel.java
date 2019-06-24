@@ -2,8 +2,8 @@ package Dark;
 
 import MainPackage.MyColors;
 import MainPackage.*;
-import com.sun.deploy.panel.NodeBorder;
-import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+//import com.sun.deploy.panel.NodeBorder;
+//import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -25,7 +25,12 @@ public class DarkLeftSidePanel extends JPanel implements ActionListener {
         artwork = new JLabel();
         artwork.setMinimumSize(new Dimension(200,200));
         artwork.setMaximumSize(new Dimension(200,200));
-        artwork.setIcon(MyIcons.DarkNoArtwork);
+        if (DarkControlButtons.player.getSong().isHasId3v2Tag()){
+            artwork.setIcon(DarkControlButtons.player.getSong().getArtWork());
+        }else
+            artwork.setIcon(MyIcons.DarkNoArtwork);
+
+
         artworkPanel.add(artwork , BorderLayout.CENTER);
         add(artwork, BorderLayout.SOUTH);
 

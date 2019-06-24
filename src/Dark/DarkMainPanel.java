@@ -1,27 +1,37 @@
 package Dark;
 
+import Logic.Song;
 import MainPackage.*;
+import com.mpatric.mp3agic.Mp3File;
 
+import javax.management.monitor.CounterMonitor;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DarkMainPanel extends JPanel implements ActionListener {
+    private Thread DarkSongPanelThread ;
     private JPanel title;
     private JPanel body;
     private JPanel homePlayListPanel;
     private JPanel SongsPanel;
     private JButton addSong;
-    private ArrayList<DarkSongPanel> songsArraylist;
+    private ArrayList<DarkSongPanel> songPanelsArraylist;
+    private JFileChooser fileChooser;
+    JPanel songsList;
+
     public DarkMainPanel(String headerName){// non playlist pages
         super();
         setLayout(new BorderLayout());
-        songsArraylist= new ArrayList<>();
+        songPanelsArraylist = new ArrayList<>();
 //        title = new JPanel(new GridLayout(1,3));
         title = new JPanel(new BorderLayout());
         title.setBackground(MyColors.DarkMenu);
@@ -70,7 +80,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             ////////////////////////////////////////////////////////////////////////////////////////////////
         }else  if(headerName.equals("SONGS")){
             body.setLayout(new BorderLayout());
-            JPanel songsList = new JPanel();
+            songsList = new JPanel();
             songsList.setLayout(new BoxLayout(songsList , BoxLayout.Y_AXIS));
             songsList.setBackground(MyColors.Trancparent);
             songsList.setMinimumSize(new Dimension(1000,500));
@@ -78,25 +88,23 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             addSong = new JButton("addSong");
             addSong.addActionListener(this);
             body.add(addSong , BorderLayout.NORTH);
-            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,true, "4:09"));
-            songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
-            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
-            songsArraylist.add(new DarkSongPanel("KILL4ME","Marilyn Manson",false,false, "4:09"));
-            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
-            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,true, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("KILL4ME","Marilyn Manson",false,false, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
+//            songsArraylist.add(new DarkSongPanel("Magnetised","Tom Odell",false,false, "4:09"));
 
 
-            for (DarkSongPanel i: songsArraylist){
-                songsList.add(i);
-            }
-            body.setBorder(new EmptyBorder(5,20,20,20));
-            body.add(songsList , BorderLayout.CENTER);
+
         }else  if(headerName.equals("ALBUMS")){
 
             body.setBorder(new EmptyBorder(5,20,20,20));
         }
 
         add(body, BorderLayout.CENTER);
+        DarkSongPanelThread = new Thread(runnableDarkSongPanels);
+        DarkSongPanelThread.start();
     }
     ///////////////////////////////////////////////////////////////////////////////
 //    public DarkMainPanel(Playlist playlist){
@@ -105,8 +113,47 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==addSong){
+            if (DarkControlButtons.player.getPlayThread().isAlive()) {
+                DarkControlButtons.player.getPlayThread().interrupt();
+            }
+            fileChooser = new JFileChooser("C:\\Users\\Hamid\\Desktop\\JPOTIFY");
+            fileChooser.setBackground(Color.darkGray);
+            fileChooser.setCurrentDirectory(new File("C:\\Users\\hamid\\Downloads\\Telegram Desktop"));
+            fileChooser.setDialogTitle("Select Mp3");
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileChooser.setFileFilter(new FileNameExtensionFilter("Mp3 files", "mp3"));
+            if (fileChooser.showOpenDialog(addSong) == JFileChooser.APPROVE_OPTION) {
+
+                String filename = fileChooser.getSelectedFile().getName();
+                String filePath = fileChooser.getSelectedFile().getPath();
+                try {
+                    Song song = new Song(filePath , filename);
+                    songPanelsArraylist.add(song.getDarkSongPanel());
+
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+
+//                JLabel artWork = new JLabel();
+
+            }
+
 
         }
 
     }
+
+
+    Runnable runnableDarkSongPanels = new Runnable() {
+        @Override
+        public void run() {
+            while (true) {
+                for (DarkSongPanel i : songPanelsArraylist) {
+                    songsList.add(i);
+                }
+                body.setBorder(new EmptyBorder(5, 20, 20, 20));
+                body.add(songsList, BorderLayout.CENTER);
+            }
+        }
+    };
 }

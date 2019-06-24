@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.Song;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class DarkSongPanel extends JPanel implements ActionListener {
     boolean isLiked;
@@ -23,53 +25,54 @@ public class DarkSongPanel extends JPanel implements ActionListener {
     JButton likeButton;
     JButton playAndPause;
     JButton more;
+    JPanel buttons;
 
     //    public DarkSongPanel(){
-    public DarkSongPanel(String song, String artist, boolean like , boolean share ,String durition){
+    public DarkSongPanel(Song song){
         super(new BorderLayout());
 //        super(new GridLayout(1,5));
 //        setBorder(new EmptyBorder(5,5,5,5));
-        JPanel buttons = new JPanel(new GridLayout(1,3));
+        buttons = new JPanel(new GridLayout(1 , 3));
 
 
-
-        setMinimumSize(new Dimension(1200,30));
-        setMaximumSize(new Dimension(1200,30));
-        musicName = new JLabel(song);
-        musicName.setFont(MyFonts.arial);
-        musicName.setBackground(MyColors.DarkMenu);
-        musicName.setForeground(MyColors.DarkTextColor);
+            setMinimumSize(new Dimension(1200, 30));
+            setMaximumSize(new Dimension(1200, 30));
+            musicName = new JLabel();
+            musicName.setFont(MyFonts.arial);
+            musicName.setBackground(MyColors.DarkMenu);
+            musicName.setForeground(MyColors.DarkTextColor);
 //        add(musicName );
-        JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
-        artistName = new JLabel(artist);
-        artistName.setFont(MyFonts.arial);
-        artistNamePanel.setBackground(MyColors.DarkMenu);
-        artistName.setForeground(MyColors.DarkTextColor);
-        artistNamePanel.add(artistName);
+            JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
+            artistName = new JLabel(song.getArtist());
+            artistName.setFont(MyFonts.arial);
+            artistNamePanel.setBackground(MyColors.DarkMenu);
+            artistName.setForeground(MyColors.DarkTextColor);
+            artistNamePanel.add(artistName);
 //        add(artistName );
 
-        likeButton = new JButton();
-        if(like)
-            likeButton.setIcon(MyIcons.Darkliked);
-        else
-            likeButton.setIcon(MyIcons.Darklike);
-        likeButton.setBorderPainted(false);
-        likeButton.setFocusable(false);
-        likeButton.setBorder(new EmptyBorder(0,0,0,0));
-        likeButton.setBackground(MyColors.DarkMenu);
-        likeButton.addActionListener(this);
+            likeButton = new JButton();
+            if (song.getLiked())
+                likeButton.setIcon(MyIcons.Darkliked);
+            else
+                likeButton.setIcon(MyIcons.Darklike);
+            likeButton.setBorderPainted(false);
+            likeButton.setFocusable(false);
+            likeButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+            likeButton.setBackground(MyColors.DarkMenu);
+            likeButton.addActionListener(this);
 //        add(likeButton);
 
-        shareButton = new JButton();
-        if(share)
-            shareButton.setIcon(MyIcons.DarkShared);
-        else
-            shareButton.setIcon(MyIcons.DarkShare);
-        shareButton.setBorderPainted(false);
-        shareButton.setFocusable(false);
-        shareButton.setBorder(new EmptyBorder(0,0,0,0));
-        shareButton.setBackground(MyColors.DarkMenu);
-        shareButton.addActionListener(this);
+            shareButton = new JButton();
+            if (song.getShared())
+                shareButton.setIcon(MyIcons.DarkShared);
+            else
+                shareButton.setIcon(MyIcons.DarkShare);
+            shareButton.setBorderPainted(false);
+            shareButton.setFocusable(false);
+            shareButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+            shareButton.setBackground(MyColors.DarkMenu);
+            shareButton.addActionListener(this);
+
 
         more = new JButton("...");
         more.setBorderPainted(false);
@@ -86,7 +89,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 
         JMenuItem remove = new JMenuItem(new AbstractAction("Remove Song") {
             public void actionPerformed(ActionEvent e) {
-                //delete selected song
+                DarkDeleteFrame deleteFrame = new DarkDeleteFrame();
             }
         });
         remove.setBackground(MyColors.DarkMenu);
@@ -109,7 +112,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 
 //        add(shareButton );
 
-        time = new JLabel(durition);
+        time = new JLabel(song.getLength());
         time.setFont(MyFonts.arial);
         setBackground(MyColors.DarkMenu);
         time.setForeground(MyColors.DarkTextColor);

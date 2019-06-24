@@ -149,7 +149,7 @@ public class DarkFrame extends JFrame {
 
 
 
-    public DarkFrame(boolean playOrPaused){
+    public DarkFrame(boolean playOrPaused) throws Exception {
         super("JPOTIFY-Dark");
         footer = new DarkFooter(playOrPaused);
         header = new DarkHeader();
