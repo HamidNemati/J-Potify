@@ -9,13 +9,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMainPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMusicInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkMusicInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JPOTIFY/Dark/DarkSongPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JPOTIFY/META-INF/JPOTIFY.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkControlButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkControlButtons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkFooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkFooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkLeftSidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkLeftSidePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkMainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkMusicInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkMusicInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dark/DarkSongPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +58,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="672" />
+          <entry key="txt" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="672" />
+          <entry key="PLAIN_TEXT" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -128,8 +123,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Dark/DarkControlButtons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-857">
-              <caret line="110" column="53" selection-start-line="110" selection-start-column="53" selection-end-line="110" selection-end-column="53" />
+            <state relative-caret-position="334">
+              <caret line="168" column="41" lean-forward="true" selection-start-line="168" selection-start-column="41" selection-end-line="168" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -366,7 +361,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561415656612" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561416116423" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -435,7 +430,7 @@
       <workItem from="1561131929873" duration="75133000" />
       <workItem from="1561350394670" duration="11739000" />
       <workItem from="1561365671276" duration="20069000" />
-      <workItem from="1561411970126" duration="3516000" />
+      <workItem from="1561411970126" duration="3805000" />
     </task>
     <task id="LOCAL-00001" summary="fgfg">
       <created>1561267862775</created>
@@ -514,11 +509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561381110321</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="player is Ok&#10;album and playlists still need work&#10;playing song name and artist labels are not correct">
+      <created>1561415914015</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1561415914015</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274629000" />
+    <option name="totallyTimeSpent" value="274918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -538,7 +540,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50075644" side_tool="true" weight="0.2405892" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32569557" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49924356" visible="true" weight="0.29078013" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49924356" weight="0.29078013" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39432624" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32765958" />
@@ -570,6 +572,32 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -585,7 +613,8 @@
     <MESSAGE value="changing the song panel&#10;play button added" />
     <MESSAGE value="changing some colors to trancparent" />
     <MESSAGE value="putting player&#10;making songs panel&#10;adding is on way" />
-    <option name="LAST_COMMIT_MESSAGE" value="putting player&#10;making songs panel&#10;adding is on way" />
+    <MESSAGE value="player is Ok&#10;album and playlists still need work&#10;playing song name and artist labels are not correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="player is Ok&#10;album and playlists still need work&#10;playing song name and artist labels are not correct" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -727,6 +756,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -925,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dark/DarkControlButtons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-857">
-          <caret line="110" column="53" selection-start-line="110" selection-start-column="53" selection-end-line="110" selection-end-column="53" />
+        <state relative-caret-position="334">
+          <caret line="168" column="41" lean-forward="true" selection-start-line="168" selection-start-column="41" selection-end-line="168" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
