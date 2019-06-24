@@ -34,25 +34,25 @@ public class DarkFriendsInfo extends JButton {
         //JButton songAndArtisit = new JButton();
         songAndArtisit.setLayout(new GridLayout(3,1));
 
-        songAndArtisit.setBackground(MyColors.DarkLeftBar);
+        songAndArtisit.setBackground(MyColors.Trancparent);
         songAndArtisit.setBorder(new EmptyBorder(2,0,5,0));
 
 
         name = new JLabel(userName);
-        name.setBackground(MyColors.DarkLeftBar);
+        name.setBackground(MyColors.Trancparent);
         name.setForeground(MyColors.DarkTextColor);
         name.setFont(MyFonts.arialBold);
         songAndArtisit.add(name);
 
         songName = new JLabel(userSong);
-        songName.setBackground(MyColors.DarkLeftBar);
+        songName.setBackground(MyColors.Trancparent);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setFont(MyFonts.arial);
         songAndArtisit.add(songName);
 
         artistName = new JLabel(userArtist);
         //artistName.setBorder(new EmptyBorder(0,0,0,0));
-        artistName.setBackground(MyColors.DarkLeftBar);
+        artistName.setBackground(MyColors.Trancparent);
         artistName.setForeground(MyColors.DarkTextColor);
         artistName.setFont(MyFonts.arialForPlaylistButtons);
         songAndArtisit.add(artistName);

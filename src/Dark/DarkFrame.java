@@ -159,7 +159,7 @@ public class DarkFrame extends JFrame {
         songsPanel = new DarkMainPanel("SONGS");
         playlistPanel = new DarkMainPanel("PLAYLISTS");
         albumsPanel = new DarkMainPanel("ALBUMS");
-        HARDCORE = new DarkMainPanel(1);
+//        HARDCORE = new DarkMainPanel(1);
 
 
         setBackground(MyColors.DarkBackground);

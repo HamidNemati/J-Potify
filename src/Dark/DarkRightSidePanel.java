@@ -31,7 +31,7 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
 //        scrollPane.setBounds(50, 30, 300, 50);
         body = new JPanel();
         body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
-        body.setBackground(MyColors.DarkRightBar);
+        body.setBackground(MyColors.Trancparent);
 
         myFriends.add(new DarkFriendsInfo("HAMID","ey vay", "khashayar"));
         myFriends.add(new DarkFriendsInfo("sgr1378","Magnitised", "Tom Odell"));

@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class DarkSongPanel extends JPanel implements ActionListener {
     boolean isLiked;
@@ -20,13 +22,14 @@ public class DarkSongPanel extends JPanel implements ActionListener {
     JButton shareButton;
     JButton likeButton;
     JButton playAndPause;
+    JButton more;
 
     //    public DarkSongPanel(){
     public DarkSongPanel(String song, String artist, boolean like , boolean share ,String durition){
         super(new BorderLayout());
 //        super(new GridLayout(1,5));
 //        setBorder(new EmptyBorder(5,5,5,5));
-        JPanel buttons = new JPanel(new GridLayout(1,2));
+        JPanel buttons = new JPanel(new GridLayout(1,3));
 
 
 
@@ -55,7 +58,6 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorder(new EmptyBorder(0,0,0,0));
         likeButton.setBackground(MyColors.DarkMenu);
         likeButton.addActionListener(this);
-        likeButton.setActionCommand("replay");
 //        add(likeButton);
 
         shareButton = new JButton();
@@ -68,7 +70,43 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         shareButton.setBorder(new EmptyBorder(0,0,0,0));
         shareButton.setBackground(MyColors.DarkMenu);
         shareButton.addActionListener(this);
-        shareButton.setActionCommand("replay");
+
+        more = new JButton("...");
+        more.setBorderPainted(false);
+        more.setFocusable(false);
+        more.setBorder(new EmptyBorder(0,0,0,5));
+        more.setBackground(MyColors.DarkMenu);
+        more.setForeground(MyColors.DarkTextColor);
+        more.setFont(MyFonts.arialBold);
+
+        more.addActionListener(this);
+
+        //Create the popup menu.
+        final JPopupMenu popup = new JPopupMenu();
+
+        JMenuItem remove = new JMenuItem(new AbstractAction("Remove Song") {
+            public void actionPerformed(ActionEvent e) {
+                //delete selected song
+            }
+        });
+        remove.setBackground(MyColors.DarkMenu);
+        remove.setForeground(MyColors.DarkTextColor);
+        popup.add(remove);
+        JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
+            public void actionPerformed(ActionEvent e) {
+                //delete selected song
+            }
+        });
+        addToPlaylist.setBackground(MyColors.DarkMenu);
+        addToPlaylist.setForeground(MyColors.DarkTextColor);
+        popup.add(addToPlaylist);
+
+        more.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                popup.show(e.getComponent(), e.getX(), e.getY());
+            }
+        });
+
 //        add(shareButton );
 
         time = new JLabel(durition);
@@ -87,6 +125,8 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorder(new EmptyBorder(0,5,0,5));
         buttons.add(likeButton);
         buttons.add(shareButton);
+        buttons.add(more);
+
         buttons.setBackground(MyColors.DarkMenu);
         add(buttons , BorderLayout.EAST);
 //        JPanel songInfo = new JPanel(new BorderLayout());
