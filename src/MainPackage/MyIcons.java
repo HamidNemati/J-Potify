@@ -45,6 +45,9 @@ public class MyIcons {
     public static ImageIcon LightFriendsActivitHorizentalPartition = new ImageIcon("icons\\50x50\\light\\friends activity horizental partition.png");
     public static ImageIcon LightAddFriend = new ImageIcon("icons\\50x50\\light\\addFriend.png");
     public static ImageIcon LightSongHorizentalPartition = new ImageIcon("icons\\50x50\\light\\song horizental partition.png");
+    public static ImageIcon LightPlaySmall = new ImageIcon("icons\\50x50\\light\\playSmall.png");
+    public static ImageIcon LightPauseSmall = new ImageIcon("icons\\50x50\\light\\pauseSmall.png");
+
 
 
 
@@ -92,7 +95,8 @@ public class MyIcons {
     public static ImageIcon DarkFriendsActivitHorizentalPartition = new ImageIcon("icons\\50x50\\dark\\friends activity horizental partition.png");
     public static ImageIcon DarkAddFriend = new ImageIcon("icons\\50x50\\dark\\addFriend.png");
     public static ImageIcon DarkSongHorizentalPartition = new ImageIcon("icons\\50x50\\dark\\song horizental partition.png");
-
+    public static ImageIcon DarkPlaySmall = new ImageIcon("icons\\50x50\\dark\\playSmall.png");
+    public static ImageIcon DarkPauseSmall = new ImageIcon("icons\\50x50\\dark\\pauseSmall.png");
 
 
 

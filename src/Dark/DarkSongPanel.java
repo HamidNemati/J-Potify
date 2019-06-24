@@ -13,12 +13,15 @@ import java.awt.event.ActionListener;
 public class DarkSongPanel extends JPanel implements ActionListener {
     boolean isLiked;
     boolean isShared;
+    boolean playOrPaused;
     JLabel musicName;
     JLabel artistName;
     JLabel time;
     JButton shareButton;
     JButton likeButton;
-//    public DarkSongPanel(){
+    JButton playAndPause;
+
+    //    public DarkSongPanel(){
     public DarkSongPanel(String song, String artist, boolean like , boolean share ,String durition){
         super(new BorderLayout());
 //        super(new GridLayout(1,5));
@@ -31,13 +34,13 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         setMaximumSize(new Dimension(1200,30));
         musicName = new JLabel(song);
         musicName.setFont(MyFonts.arial);
-        musicName.setBackground(MyColors.Trancparent);
+        musicName.setBackground(MyColors.DarkMenu);
         musicName.setForeground(MyColors.DarkTextColor);
 //        add(musicName );
         JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
         artistName = new JLabel(artist);
         artistName.setFont(MyFonts.arial);
-        artistNamePanel.setBackground(MyColors.Trancparent);
+        artistNamePanel.setBackground(MyColors.DarkMenu);
         artistName.setForeground(MyColors.DarkTextColor);
         artistNamePanel.add(artistName);
 //        add(artistName );
@@ -50,7 +53,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorderPainted(false);
         likeButton.setFocusable(false);
         likeButton.setBorder(new EmptyBorder(0,0,0,0));
-        likeButton.setBackground(MyColors.Trancparent);
+        likeButton.setBackground(MyColors.DarkMenu);
         likeButton.addActionListener(this);
         likeButton.setActionCommand("replay");
 //        add(likeButton);
@@ -63,14 +66,14 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         shareButton.setBorderPainted(false);
         shareButton.setFocusable(false);
         shareButton.setBorder(new EmptyBorder(0,0,0,0));
-        shareButton.setBackground(MyColors.Trancparent);
+        shareButton.setBackground(MyColors.DarkMenu);
         shareButton.addActionListener(this);
         shareButton.setActionCommand("replay");
 //        add(shareButton );
 
         time = new JLabel(durition);
         time.setFont(MyFonts.arial);
-        setBackground(MyColors.Trancparent);
+        setBackground(MyColors.DarkMenu);
         time.setForeground(MyColors.DarkTextColor);
 
 //        add(time );
@@ -84,27 +87,40 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         likeButton.setBorder(new EmptyBorder(0,5,0,5));
         buttons.add(likeButton);
         buttons.add(shareButton);
-        buttons.setBackground(MyColors.Trancparent);
-        add(buttons , BorderLayout.WEST);
+        buttons.setBackground(MyColors.DarkMenu);
+        add(buttons , BorderLayout.EAST);
 //        JPanel songInfo = new JPanel(new BorderLayout());
 //        songInfo.add(musicName , BorderLayout.CENTER);
 //        songInfo.add(artistName, BorderLayout.EAST);
         JPanel songInfo = new JPanel(new GridLayout());
-        songInfo.setBackground(MyColors.Trancparent);
+        songInfo.setBackground(MyColors.DarkMenu);
         songInfo.add(musicName );
         songInfo.add(artistName);
         songInfo.setBorder(new EmptyBorder(5,5,5,5));
-        songInfo.setBackground(MyColors.Trancparent);
+        songInfo.setBackground(MyColors.DarkMenu);
         time.setBorder(new EmptyBorder(5,0,5,5));
         add(songInfo , BorderLayout.CENTER);
-        add(time , BorderLayout.EAST);
+//        add(time , BorderLayout.EAST);
         add( new JLabel(MyIcons.DarkSongHorizentalPartition), BorderLayout.SOUTH);
+
+        playAndPause = new JButton();
+        if(playOrPaused)
+            playAndPause.setIcon(MyIcons.DarkPauseSmall);
+        else
+            playAndPause.setIcon(MyIcons.DarkPlaySmall);
+        playAndPause.setBorderPainted(false);
+        playAndPause.setFocusable(false);
+        playAndPause.setBorder(new EmptyBorder(0,5,0,0));
+        playAndPause.setBackground(MyColors.DarkMenu);
+        playAndPause.addActionListener(this);
+        playAndPause.setActionCommand("replay");
+        add(playAndPause , BorderLayout.WEST);
 
 
 
 
 //        JPanel likeAndSharePanel = new JPanel(new BorderLayout()); //like & share & partition
-//        likeAndSharePanel.setBackground(MyColors.DarkFooter);
+//        likeAndSharePanel.setBackground(MyColors.DarkMenu);
 //        likeAndSharePanel.add(likeAndShare ,BorderLayout.CENTER);
 //        likeAndSharePanel.add(partition , BorderLayout.EAST);
 
@@ -137,6 +153,16 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 shareButton.setIcon(MyIcons.DarkShared);
                 isShared = true;
                 System.out.println("share...");
+            }
+        }else if(e.getSource()==playAndPause){
+            if(playOrPaused){
+                playAndPause.setIcon(MyIcons.DarkPlaySmall);
+                playOrPaused = false;
+                System.out.println("paused...");
+            }else{
+                playAndPause.setIcon(MyIcons.DarkPauseSmall);
+                playOrPaused = true;
+                System.out.println("playing...");
             }
         }
     }
