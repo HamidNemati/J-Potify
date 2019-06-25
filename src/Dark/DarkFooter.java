@@ -40,7 +40,16 @@ public class DarkFooter extends JPanel {
 
     }
 
-    public static void setDarkMusicInfo(DarkMusicInfo darkMusicInfo) {
-        DarkFooter.darkMusicInfo = darkMusicInfo;
+//    public static void setDarkMusicInfo(DarkMusicInfo darkMusicInfo) {
+//        DarkFooter.darkMusicInfo = darkMusicInfo;
+//        this.add(darkMusicInfo);
+//    }
+
+
+
+    public static void setDarkMusicInfo(String songName, String Artist){
+        darkMusicInfo.musicName.setText(songName);
+        darkMusicInfo.artistName.setText(Artist);
+
     }
 }

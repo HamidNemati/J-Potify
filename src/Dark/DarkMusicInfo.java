@@ -18,23 +18,24 @@ public class DarkMusicInfo extends JPanel implements ActionListener {
     JLabel artistName;
     JButton like;
     JButton share;
-
+    Song song;
 
     public DarkMusicInfo(Song song){
         super();
         //setLayout(new GridLayout(3,1));
+        this.song = song;
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkFooter);
         JPanel musicNameAndArtistPanel = new JPanel(new GridLayout(2,1));//music name
 
 
-        musicName = new JLabel(song.getName());
+        musicName = new JLabel(this.song.getName());
         musicName.setFont(MyFonts.arialBold);
         musicNameAndArtistPanel.setBackground(MyColors.DarkFooter);
         musicName.setForeground(MyColors.DarkTextColor);
         musicNameAndArtistPanel.add(musicName );
         JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
-        artistName = new JLabel(song.getArtist());
+        artistName = new JLabel(this.song.getArtist());
         artistName.setFont(MyFonts.arial);
         artistNamePanel.setBackground(MyColors.DarkFooter);
         artistName.setForeground(MyColors.DarkTextColor);
@@ -178,5 +179,27 @@ public class DarkMusicInfo extends JPanel implements ActionListener {
                 System.out.println("share...");
             }
         }
+    }
+
+    public void setSong(Song song){
+        this.song = song;
+        JPanel musicNameAndArtistPanel = new JPanel(new GridLayout(2,1));//music name
+
+
+        this.musicName = new JLabel(song.getName());
+        musicName.setFont(MyFonts.arialBold);
+        musicNameAndArtistPanel.setBackground(MyColors.DarkFooter);
+        musicName.setForeground(MyColors.DarkTextColor);
+        musicNameAndArtistPanel.add(musicName );
+        JPanel artistNamePanel = new JPanel(new BorderLayout());//artist name
+        this.artistName = new JLabel(song.getArtist());
+        artistName.setFont(MyFonts.arial);
+        artistNamePanel.setBackground(MyColors.DarkFooter);
+        artistName.setForeground(MyColors.DarkTextColor);
+        artistNamePanel.add(artistName);
+//        add(artistNamePanel , BorderLayout.SOUTH);
+        musicNameAndArtistPanel.add(artistName );
+        add(musicNameAndArtistPanel, BorderLayout.CENTER);
+
     }
 }

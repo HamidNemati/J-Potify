@@ -115,8 +115,15 @@ public class DarkControlButtons extends JPanel implements ActionListener {
                 playOrPauseParameter = true;
                 if (player.getPlayThread().isAlive())
                     player.getPlayThread().resume();
-                else player.getPlayThread().start();
+                else {
+
+                    player.getPlayThread().start();
+                }
+//                DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
+
+                System.out.println("................................");
                 System.out.println("playing...");
+
             }
         }
 
@@ -152,11 +159,13 @@ public class DarkControlButtons extends JPanel implements ActionListener {
                 player.getPlayThread().stop();
                 player.setCurrentSong(player.getCurrentPlayList().get(index + 1));
                 if(playOrPauseParameter){
+                    System.out.println("?|?|?|??|??|??||?|?|?|?|?|?|?||");
                     playOrPause.setIcon(MyIcons.DarkPlay);
                     playOrPauseParameter = false;
                     if (player.getPlayThread().isAlive())
                         player.getPlayThread().suspend();
                     System.out.println("paused...");
+//                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
                 }
             }else System.out.println("Next song doesnt exist!");
             System.out.println("next button pressed!");
@@ -172,6 +181,7 @@ public class DarkControlButtons extends JPanel implements ActionListener {
                     if (player.getPlayThread().isAlive())
                         player.getPlayThread().suspend();
                     System.out.println("paused...");
+//                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
                 }
                 System.out.println("previous button pressed!");
             }else System.out.println("Previous song does'nt exist");

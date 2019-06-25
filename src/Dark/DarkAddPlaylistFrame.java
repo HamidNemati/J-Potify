@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.playList;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -88,6 +89,10 @@ public class DarkAddPlaylistFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==click){
+            playList playList = new playList(playlistName.getText() , description.getText());
+            DarkControlButtons.player.playLists.add(playList);
+            System.out.println(DarkControlButtons.player.playLists.size());
+
             //add it to play list and closse the window
 
         }
