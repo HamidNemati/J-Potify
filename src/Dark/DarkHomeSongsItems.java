@@ -9,11 +9,11 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class DarkHomeItems extends JPanel {
+public class DarkHomeSongsItems extends JPanel {
     JLabel songName;
     JLabel artistName;
     JLabel artwork;
-    public DarkHomeItems(Song song){
+    public DarkHomeSongsItems(Song song){
         super();
         artwork = new JLabel();
         songName = new JLabel();
@@ -50,7 +50,7 @@ public class DarkHomeItems extends JPanel {
     }
 
 
-    public DarkHomeItems(){
+    public DarkHomeSongsItems(){
         super();
         setBorder(new EmptyBorder(0,10,0,0));
         artwork = new JLabel();

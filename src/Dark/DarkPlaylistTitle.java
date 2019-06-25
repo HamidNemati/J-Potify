@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.playList;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -38,5 +39,29 @@ public class DarkPlaylistTitle extends JButton {
         add(icon , BorderLayout.WEST);
         add(name , BorderLayout.CENTER);
     }
+    public DarkPlaylistTitle(playList playList){
+//        super(new BorderLayout());
+        super();
+        setLayout(new BorderLayout());
+        setBackground(MyColors.DarkLeftBar);
+        setBorder(new EmptyBorder(0,0,0,0));
+        icon = new JLabel();
+        icon.setBackground(MyColors.DarkLeftBar);
+        name = new JLabel();
+        name.setFont(MyFonts.arialForPlaylistButtons);
+        name.setForeground(MyColors.DarkTextColor);
+        name.setBorder(new EmptyBorder(0,60,0,0));
+        name.setBorder(new EmptyBorder(0,0,0,0));
 
+        if(playList.getName().equals("Shared Playlist"))
+            icon.setIcon(MyIcons.DarkSharedPlayListTitle);//check
+        else if(playList.getName().equals("Favourite Playlist"))
+            icon.setIcon(MyIcons.DarkFavouritePlayListTitle);//check
+        else    icon.setIcon(MyIcons.DarkNormalPlayListTitle);//check
+
+
+        name.setText(playList.getName());
+        add(icon , BorderLayout.WEST);
+        add(name , BorderLayout.CENTER);
+    }
 }
