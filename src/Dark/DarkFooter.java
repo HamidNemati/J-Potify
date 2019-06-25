@@ -20,6 +20,7 @@ public class DarkFooter extends JPanel {
         setLayout(new GridLayout(1,3));
         setBackground(MyColors.DarkFooter);
 
+
         if (DarkControlButtons.player.getCurrentSong() != null)
             darkMusicInfo = new DarkMusicInfo(DarkControlButtons.player.getCurrentSong());
         else {

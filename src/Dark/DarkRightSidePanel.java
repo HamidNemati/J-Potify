@@ -16,6 +16,8 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
     JButton addFriend;
     ArrayList<DarkFriendsInfo> myFriends;
     public DarkRightSidePanel(){
+        super();
+        setAutoscrolls(true);
         myFriends = new ArrayList<>();
         setBackground(MyColors.DarkRightBar);
         setLayout(new BorderLayout());

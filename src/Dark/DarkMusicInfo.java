@@ -57,6 +57,7 @@ public class DarkMusicInfo extends JPanel implements ActionListener {
         like.setBackground(MyColors.DarkFooter);
         like.addActionListener(this);
         like.setActionCommand("replay");
+        likeAndShare.setBackground(MyColors.DarkFooter);
         likeAndShare.add(like , BorderLayout.NORTH);
 
         share = new JButton();
@@ -137,6 +138,7 @@ public class DarkMusicInfo extends JPanel implements ActionListener {
         share.addActionListener(this);
         share.setActionCommand("replay");
         likeAndShare.add(share , BorderLayout.SOUTH);
+        likeAndShare.setBackground(MyColors.DarkFooter);
 
         JLabel partition = new JLabel(MyIcons.DarkPartition);
         partition.setBackground(MyColors.DarkFooter);
