@@ -67,7 +67,7 @@ public class DarkAddPlaylistFrame extends JFrame implements ActionListener {
         playlistDetails.add(namePanel , BorderLayout.NORTH);
         playlistDetails.add(descriptionPanel , BorderLayout.CENTER);
 
-        click = new JButton("Create!");
+        click = new JButton("Create");
         click.setBorderPainted(false);
         click.setFocusable(false);
         click.setBorder(new EmptyBorder(0,0,5,0));
@@ -92,6 +92,11 @@ public class DarkAddPlaylistFrame extends JFrame implements ActionListener {
             playList playList = new playList(playlistName.getText() , description.getText());
             DarkControlButtons.player.playLists.add(playList);
             System.out.println(DarkControlButtons.player.playLists.size());
+            click.setText("created!");
+            for(int i = 0 ; i < 1000 ; i++){
+
+            }
+            this.setVisible(false);
 
             //add it to play list and closse the window
 

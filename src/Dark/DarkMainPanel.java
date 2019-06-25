@@ -88,6 +88,10 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             songsList.setMaximumSize(new Dimension(1000,500));
             addSong = new JButton("addSong");
             addSong.addActionListener(this);
+            addSong.setBackground(MyColors.DarkerTextColor);
+            addSong.setForeground(Color.white);
+            addSong.setFocusable(false);
+            addSong.setBorderPainted(false);
             body.add(addSong , BorderLayout.NORTH);
 //            songsArraylist.add(new DarkSongPanel("Something to remind you","Staind",true,true, "4:09"));
 //            songsArraylist.add(new DarkSongPanel("Still Loving You","Scorpions",true,false, "4:09"));
@@ -123,7 +127,9 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             fileChooser.setBackground(Color.darkGray);
             fileChooser.setCurrentDirectory(new File("C:\\Users\\hamid\\Downloads\\Telegram Desktop"));
             fileChooser.setDialogTitle("Select Mp3");
+            fileChooser.setBackground(MyColors.DarkFooter);
             fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileChooser.setForeground(MyColors.DarkLeftBar);
             fileChooser.setFileFilter(new FileNameExtensionFilter("Mp3 files", "mp3"));
             if (fileChooser.showOpenDialog(addSong) == JFileChooser.APPROVE_OPTION) {
 

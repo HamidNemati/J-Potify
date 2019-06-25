@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class DarkFooter extends JPanel {
 
     public static DarkMusicInfo darkMusicInfo;
+    DarkVolumePanel volumePanel;
 
     public DarkFooter(boolean playOrPaused) throws Exception {
         super();
@@ -33,7 +34,7 @@ public class DarkFooter extends JPanel {
         musicController.setMaximumSize(new Dimension(600,100));
         add(musicController, BorderLayout.CENTER);
 
-        DarkVolumePanel volumePanel = new DarkVolumePanel();
+        volumePanel = new DarkVolumePanel();
         volumePanel.setBorder(new EmptyBorder(16,0,0,20));
         add(volumePanel, BorderLayout.EAST);
 
@@ -52,4 +53,6 @@ public class DarkFooter extends JPanel {
         darkMusicInfo.artistName.setText(Artist);
 
     }
+
+
 }

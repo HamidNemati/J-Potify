@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 public class DarkControlButtons extends JPanel implements ActionListener {
     public static boolean playOrPauseParameter = false;// true = playing(pause icon) ... false = paused(play icon)
     public static boolean SuffleOrNot = false;
-    public static boolean replayAllOrNot = false;
+    public static boolean replayAllOrNot = true;
 
     JButton replay = new JButton(MyIcons.DarkReplayAll);
     JButton playOrPause = new JButton();

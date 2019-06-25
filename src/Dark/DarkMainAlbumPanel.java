@@ -11,22 +11,21 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DarkMainPlaylistPanel extends JPanel implements ActionListener {
-
+public class DarkMainAlbumPanel extends JPanel implements ActionListener {
     JLabel playlistHeaderTitle ;
     JLabel playlistHeaderNameTitle ;
     JLabel playlistHeaderDescription ;
 
 
 
-    public DarkMainPlaylistPanel(int playlist){
+    public DarkMainAlbumPanel(int playlist){
         super(new BorderLayout());
 //        JPanel header = new JPanel(new BorderLayout());
         GradientPanel header = new GradientPanel(MyColors.DarkerTextColor ,MyColors.DarkBackground );
 
-        playlistHeaderTitle = new JLabel("PLAYLIST");
-        playlistHeaderNameTitle = new JLabel("Rock&Metal");
-        playlistHeaderDescription = new JLabel("goodi goodi goodi");
+        playlistHeaderTitle = new JLabel("ALBUM");
+        playlistHeaderNameTitle = new JLabel("The wall");
+        playlistHeaderDescription = new JLabel("By : "+"Pink Floyd");
 
         header.setLayout(new BorderLayout());
         JLabel playlistArtwork = new JLabel(MyIcons.DarkNoArtwork);

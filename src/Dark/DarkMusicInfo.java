@@ -45,6 +45,7 @@ public class DarkMusicInfo extends JPanel implements ActionListener {
         add(musicNameAndArtistPanel, BorderLayout.CENTER);
 
         JPanel likeAndShare = new JPanel(new BorderLayout());
+
         like = new JButton();
         if(isLiked)
             like.setIcon(MyIcons.Darkliked);

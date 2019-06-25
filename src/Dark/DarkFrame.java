@@ -17,6 +17,11 @@ public class DarkFrame extends JFrame {
     private DarkMainPanel songsPanel;
     private DarkMainPanel albumsPanel;
 
+    DarkMainPlaylistPanel hardcore = new DarkMainPlaylistPanel(1);
+    DarkMainAlbumPanel album = new DarkMainAlbumPanel(1);
+
+
+
     public Dimension getMinimum() {
         return minimum;
     }
@@ -190,8 +195,8 @@ public class DarkFrame extends JFrame {
 
 
 
-//        add(HARDCORE , BorderLayout.CENTER);
-
+//        add(hardcore , BorderLayout.CENTER);
+//        add(album , BorderLayout.CENTER);
 
 
 
