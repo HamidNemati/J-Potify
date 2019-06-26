@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.Player;
 import Logic.Song;
 import MainPackage.*;
 import com.mpatric.mp3agic.Mp3File;
@@ -91,8 +92,8 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             playlistBorder.setTitleColor(MyColors.DarkTextColor);
             homePlayListPanel.setBorder(playlistBorder);
             homePlayListPanel.setBackground(MyColors.DarkBackground);
-//            homePlayListPanel.add(new DarkHomePlaylistsItems());
-//            homePlayListPanel.add(new DarkHomePlaylistsItems());
+            homePlayListPanel.add(Player.sharedPlaylist.getHomePlaylistsItems());
+            homePlayListPanel.add(Player.favouritePlaylist.getHomePlaylistsItems());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());

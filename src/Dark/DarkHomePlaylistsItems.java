@@ -20,10 +20,11 @@ public class DarkHomePlaylistsItems extends JPanel implements ActionListener {
         artwork = new JLabel();
         songName = new JLabel();
         setLayout(new BorderLayout());
-
+        setBackground(MyColors.DarkBackground);
         artwork.setMaximumSize(new Dimension(100,100));
         artwork.setMinimumSize(new Dimension(100,100));
         artwork.setSize(100,100);
+        artwork.setBackground(MyColors.DarkBackground);
 
         artwork.setIcon(MyIcons.DarkNoArtworkSmall);
 
@@ -32,7 +33,11 @@ public class DarkHomePlaylistsItems extends JPanel implements ActionListener {
         JPanel musicInfo = new JPanel(new BorderLayout());
         musicInfo.setBackground(MyColors.DarkBackground);
         songName.setText(playList.getName());
-        songName.setHorizontalAlignment(JLabel.CENTER);
+        songName.setSize(100,50);
+        songName.setMinimumSize(new Dimension(100,50));
+        songName.setMaximumSize(new Dimension(100,50));
+        songName.setBorder(new EmptyBorder(0,0,0,10));
+//        songName.setHorizontalAlignment(JLabel.CENTER);
         songName.setFont(MyFonts.arialBold);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setBackground(MyColors.DarkBackground);
