@@ -26,12 +26,27 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     private JButton showAllPlaylists;
     private ArrayList<DarkSongPanel> songPanelsArraylist;//for songs
     private ArrayList<DarkHomeSongsItems> homeSongsArraylist;//for home
-    private ArrayList<DarkHomeSongsItems> homePlaylistsArraylist;//for home
+    private ArrayList<DarkHomePlaylistsItems> homePlaylistsArraylist;//for home
     private JFileChooser fileChooser;
     private JPanel songsList;
     String filePath;
     String filename;
 
+    public JPanel getHomePlayListPanel() {
+        return homePlayListPanel;
+    }
+
+    public JPanel getSongsList() {
+        return songsList;
+    }
+
+    public ArrayList<DarkHomeSongsItems> getHomeSongsArraylist() {
+        return homeSongsArraylist;
+    }
+
+    public JPanel getHomeSongPanel() {
+        return homeSongPanel;
+    }
 
     public DarkMainPanel(String headerName){// non playlist pages
         super();
@@ -117,17 +132,18 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             songsBorder.setTitleColor(MyColors.DarkTextColor);
             homeSongPanel.setBorder(songsBorder);
             homeSongPanel.setBackground(MyColors.DarkBackground);
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
-            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            addASongItemToHome(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
+//            homeSongPanel.add(new DarkHomeSongsItems());
             homeSongPanelPanel.add(homeSongPanel ,BorderLayout.CENTER);
             showAllSongs = new JButton("show all songs...");
             showAllSongs.addActionListener(this);
@@ -174,7 +190,12 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     }
     ///////////////////////////////////////////////////////////////////////////////
 //    public DarkMainPanel(Playlist playlist){
-
+    public void addASongItemToHome(DarkHomeSongsItems darkHomeSongsItems){
+        homeSongPanel.add(darkHomeSongsItems);
+    }
+    public void removeASongItemToHome(DarkHomeSongsItems darkHomeSongsItems){
+        homeSongPanel.remove(darkHomeSongsItems);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -184,7 +205,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             }
             fileChooser = new JFileChooser("musicss");
             fileChooser.setBackground(Color.darkGray);
-            fileChooser.setCurrentDirectory(new File("C:\\Users\\hamid\\Downloads\\Telegram Desktop"));
+//            fileChooser.setCurrentDirectory(new File("C:\\Users\\hamid\\Downloads\\Telegram Desktop"));
             fileChooser.setDialogTitle("Select Mp3");
             fileChooser.setBackground(MyColors.DarkFooter);
             fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -199,21 +220,25 @@ public class DarkMainPanel extends JPanel implements ActionListener {
                     Song song = new Song(filePath , filename);
                     DarkControlButtons.player.songs.add(song);
                     songPanelsArraylist.add(song.getDarkSongPanel());
+//                    homeSongsArraylist.add(song.getDarkHomeSongsItems());
                     songsList.add(song.getDarkSongPanel());
 //                    songsList.add(song.getDarkSongPanel());
                     songsList.setVisible(false);
                     songsList.setVisible(true);
                     System.out.println("added to songs list");
 
-////                    DarkControlButtons.player.songs.add(song);
-//                    homeSongsArraylist.add(song.getDarkHomeSongsItems());
-//                    homeSongsPanel.add(song.getDarkHomeSongsItems());
-//                    homeSongsPanel.add(song.getDarkHomeSongsItems());
-//                    homeSongsPanel.setVisible(false);
-//                    homeSongsPanel.setVisible(true);
+                    DarkControlButtons.player.songs.add(song);
+                    homeSongsArraylist.add(song.getDarkHomeSongsItems());
+                    System.out.println("added to arraylist of home items");
+//                    homeSongPanel.add(song.getDarkHomeSongsItems());
+//                    homeSongPanel.add(new DarkHomeSongsItems());
+//                    addASongItemToHome(new Song(filePath,filename).getDarkHomeSongsItems());
+                    Main.darkFrame.getHomePanel().homeSongPanel.add(song.getDarkHomeSongsItems());
+//                    homeSongPanel.setVisible(true);
 ////                    homeSongsPanel.add(song.getDarkHomeSongsItems());
 //                    homeSongsPanel.add(new DarkHomeSongsItems());
 //                    homeSongsPanel.setVisible(true);
+                    System.out.println("added to home list");
 
 
                 } catch (Exception e1) {

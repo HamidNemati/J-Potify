@@ -1,6 +1,7 @@
 package Dark;
 
 import Logic.Song;
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -89,8 +90,19 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         final JPopupMenu popup = new JPopupMenu();
 
         JMenuItem remove = new JMenuItem(new AbstractAction("Remove Song") {
-            public void actionPerformed(ActionEvent e) {
-                DarkDeleteFrame deleteFrame = new DarkDeleteFrame();
+            public void actionPerformed(ActionEvent e)
+            {
+//                DarkDeleteFrame deleteFrame = new DarkDeleteFrame();
+                Main.darkFrame.getHomePanel().getHomeSongsArraylist().remove(song.getDarkHomeSongsItems());
+                Main.darkFrame.getHomePanel().getHomeSongPanel().remove(song.getDarkHomeSongsItems());
+                Main.darkFrame.getHomePanel().setVisible(false);
+                Main.darkFrame.getHomePanel().setVisible(true);
+
+                Main.darkFrame.getSongsPanel().getSongsList().remove(song.getDarkSongPanel());
+                Main.darkFrame.getSongsPanel().getSongsList().setVisible(false);
+                Main.darkFrame.getSongsPanel().getSongsList().setVisible(true);
+
+
             }
         });
         remove.setBackground(MyColors.DarkMenu);
@@ -99,6 +111,12 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
             public void actionPerformed(ActionEvent e) {
                 //delete selected song
+                try {
+                    Main.darkFrame.getHomePanel().getHomePlayListPanel().add(song.getDarkHomeSongsItems());
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+
             }
         });
         addToPlaylist.setBackground(MyColors.DarkMenu);
@@ -159,7 +177,6 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         playAndPause.setBorder(new EmptyBorder(0,5,0,0));
         playAndPause.setBackground(MyColors.DarkMenu);
         playAndPause.addActionListener(this);
-        playAndPause.setActionCommand("replay");
         add(playAndPause , BorderLayout.WEST);
 
 

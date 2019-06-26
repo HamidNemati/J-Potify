@@ -4,6 +4,7 @@ import MainPackage.MyColors;
 import MainPackage.MyFonts;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class DarkMenu extends JMenuBar {
     public DarkMenu(){
@@ -15,8 +16,11 @@ public class DarkMenu extends JMenuBar {
         menu.setFont(MyFonts.arial);
         add(menu);
 
-        JMenuItem setting = new JMenuItem("Setting");
-        setting.setBackground(MyColors.DarkFooter);
+        JMenuItem setting = new JMenuItem(new AbstractAction("Setting") {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });        setting.setBackground(MyColors.DarkFooter);
         setting.setFont(MyFonts.arial);
         setting.setForeground(MyColors.DarkTextColor);
         setting.setBorderPainted(false);

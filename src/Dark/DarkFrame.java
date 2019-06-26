@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.playList;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 
@@ -18,6 +19,7 @@ public class DarkFrame extends JFrame {
     private DarkMainPanel albumsPanel;
 
     DarkMainPlaylistPanel hardcore = new DarkMainPlaylistPanel(1);
+    DarkMainPlaylistPanel cactus = new DarkMainPlaylistPanel(new playList("good mood:)","what a wonderful fucking world"));
     DarkMainAlbumPanel album = new DarkMainAlbumPanel(1);
 
 
@@ -93,6 +95,7 @@ public class DarkFrame extends JFrame {
     public void setAlbumsPanel(DarkMainPanel albumsPanel) {
         this.albumsPanel = albumsPanel;
     }
+
 
     public DarkMainPanel getHARDCORE() {
         return HARDCORE;
@@ -199,6 +202,7 @@ public class DarkFrame extends JFrame {
 //        add(album , BorderLayout.CENTER);
 
 
+//        add(cactus , BorderLayout.CENTER);
 
 
 
