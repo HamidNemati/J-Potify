@@ -1,6 +1,8 @@
 package Dark;
 
+import Logic.Player;
 import Logic.playList;
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -89,14 +91,20 @@ public class DarkAddPlaylistFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==click){
+            System.out.println("number of playlists before add= "+ Player.getPlayLists().size());
             playList playList = new playList(playlistName.getText() , description.getText());
             DarkControlButtons.player.playLists.add(playList);
             System.out.println(DarkControlButtons.player.playLists.size());
             click.setText("created!");
-            for(int i = 0 ; i < 1000 ; i++){
-
-            }
-            this.setVisible(false);
+            Player.getPlayLists().add(playList);
+            Main.darkFrame.getMainPlaylistPanelsArraylists().add(playList.getMainPlaylistPanel());
+//            Main.darkFrame.getLeftBar().getPlaylistPanel().add(playList.getPlaylistTitle());
+            Main.darkFrame.getLeftBar().getPlaylistPanel().addPlaylistToPanel(playList);
+            Main.darkFrame.getLeftBar().getPlaylistPanel().setVisible(false);
+            Main.darkFrame.getLeftBar().getPlaylistPanel().setVisible(true);
+//            this.setVisible(false);
+            this.dispose();
+            System.out.println("number of playlists after add= "+ Player.getPlayLists().size());
 
             //add it to play list and closse the window
 

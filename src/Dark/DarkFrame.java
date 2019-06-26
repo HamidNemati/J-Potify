@@ -6,6 +6,7 @@ import MainPackage.MyFonts;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class DarkFrame extends JFrame {
     private Dimension minimum = new Dimension(1000,700);
@@ -17,12 +18,15 @@ public class DarkFrame extends JFrame {
     private DarkMainPanel playlistPanel;
     private DarkMainPanel songsPanel;
     private DarkMainPanel albumsPanel;
+    private ArrayList<DarkMainPlaylistPanel> mainPlaylistPanelsArraylists;
 
     DarkMainPlaylistPanel hardcore = new DarkMainPlaylistPanel(1);
     DarkMainPlaylistPanel cactus = new DarkMainPlaylistPanel(new playList("good mood:)","what a wonderful fucking world"));
     DarkMainAlbumPanel album = new DarkMainAlbumPanel(1);
 
-
+    public ArrayList<DarkMainPlaylistPanel> getMainPlaylistPanelsArraylists() {
+        return mainPlaylistPanelsArraylists;
+    }
 
     public Dimension getMinimum() {
         return minimum;
@@ -167,6 +171,8 @@ public class DarkFrame extends JFrame {
         songsPanel = new DarkMainPanel("SONGS");
         playlistPanel = new DarkMainPanel("PLAYLISTS");
         albumsPanel = new DarkMainPanel("ALBUMS");
+        mainPlaylistPanelsArraylists = new ArrayList<>();
+
 //        HARDCORE = new DarkMainPanel(1);
 
 

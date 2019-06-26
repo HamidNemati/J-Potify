@@ -1,5 +1,6 @@
 package Dark;
 
+import Logic.Song;
 import MainPackage.*;
 
 import javax.swing.*;
@@ -12,7 +13,7 @@ public class DarkDeleteFrame extends JFrame implements ActionListener {
 
     private JButton delete = new JButton("DELETE");
     private JButton cancel = new JButton("CANCEL");
-    public DarkDeleteFrame(){
+    public DarkDeleteFrame(Song song){
         setMinimumSize(new Dimension(600,400));
         setMaximumSize(new Dimension(600,400));
         setResizable(false);

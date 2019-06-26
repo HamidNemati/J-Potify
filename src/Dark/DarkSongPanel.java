@@ -92,17 +92,14 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         JMenuItem remove = new JMenuItem(new AbstractAction("Remove Song") {
             public void actionPerformed(ActionEvent e)
             {
-//                DarkDeleteFrame deleteFrame = new DarkDeleteFrame();
+//                DarkDeleteFrame deleteFrame = new DarkDeleteFrame(song);
                 Main.darkFrame.getHomePanel().getHomeSongsArraylist().remove(song.getDarkHomeSongsItems());
                 Main.darkFrame.getHomePanel().getHomeSongPanel().remove(song.getDarkHomeSongsItems());
                 Main.darkFrame.getHomePanel().setVisible(false);
                 Main.darkFrame.getHomePanel().setVisible(true);
-
                 Main.darkFrame.getSongsPanel().getSongsList().remove(song.getDarkSongPanel());
                 Main.darkFrame.getSongsPanel().getSongsList().setVisible(false);
                 Main.darkFrame.getSongsPanel().getSongsList().setVisible(true);
-
-
             }
         });
         remove.setBackground(MyColors.DarkMenu);

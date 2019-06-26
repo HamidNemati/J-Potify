@@ -1,5 +1,7 @@
 package Dark;
 
+import Logic.Player;
+import Logic.playList;
 import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
@@ -22,6 +24,16 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
 
     JButton playlistButton = new JButton();//playlist button
 
+    public void addPlaylistToPanel(playList playList){
+        playlistsArraylist.add(playList.getPlaylistTitle());
+        playlistsList.removeAll();
+
+        for (DarkPlaylistTitle i : playlistsArraylist){
+            playlistsList.add(i);
+        }
+
+    }
+
     public DarkPlaylistPanel(){
         super();
         playlistButton.setIcon(MyIcons.DarkPlaylistButton);
@@ -40,12 +52,14 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
 
 
 
-        sharedPlaylist = new DarkPlaylistTitle("Shared Playlist");
-        favouritePlaylist = new DarkPlaylistTitle("Favourite Playlist");
+        sharedPlaylist = Player.sharedPlaylist.getPlaylistTitle();
+        favouritePlaylist = Player.favouritePlaylist.getPlaylistTitle();
+
+
         playlistsArraylist.add(sharedPlaylist);
         playlistsArraylist.add(favouritePlaylist);
-        playlistsArraylist.add(new DarkPlaylistTitle("HARDCORE"));
-        playlistsArraylist.add(new DarkPlaylistTitle("GoWithFlow"));
+//        playlistsArraylist.add(new DarkPlaylistTitle("HARDCORE"));
+//        playlistsArraylist.add(new DarkPlaylistTitle("GoWithFlow"));
 
 
         for (DarkPlaylistTitle i : playlistsArraylist){
@@ -75,17 +89,17 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if(source==addPlaylistButton){
+            System.out.println("adding a playlist:");
             DarkAddPlaylistFrame addPlaylistFrame = new DarkAddPlaylistFrame();
-            System.out.println("playlist added");
-            DarkPlaylistTitle newPlaylist = new DarkPlaylistTitle("New Playlist");
-            playlistsList = new JPanel();
-            playlistsArraylist.add(newPlaylist);
-            playlistsList.add(newPlaylist);
-            for (DarkPlaylistTitle i : playlistsArraylist){
-                playlistsList.add(i);
-            }
+//            DarkPlaylistTitle newPlaylist = new DarkPlaylistTitle("New Playlist");
+//            playlistsList = new JPanel();
+//            playlistsArraylist.add(newPlaylist);
+//            playlistsList.add(newPlaylist);
+//            for (DarkPlaylistTitle i : playlistsArraylist){
+//                playlistsList.add(i);
+//            }
         }else if(e.getSource()==playlistButton){
-            System.out.println("HOME");
+            System.out.println("Playlists");
             Main.darkFrame.addPlaylistsToMainPanel();
         }
     }

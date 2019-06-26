@@ -22,22 +22,39 @@ public class DarkHomeSongsItems extends JPanel {
 
         artwork.setMaximumSize(new Dimension(100,100));
         artwork.setMinimumSize(new Dimension(100,100));
-        artwork.setSize(100,100);
 
-        artwork.setIcon(MyIcons.DarkNoArtworkSmall);
+        artwork.setSize(100,100);
+//        if()
+            artwork.setIcon(MyIcons.DarkNoArtworkSmall);
+//
+//            artwork.setIcon(song.getArtWorkSmall());
+
+
+
+//        if (DarkControlButtons.player.getCurrentSong() != null){
+//            if (DarkControlButtons.player.getCurrentSong().isHasId3v2Tag()) {
+//                artwork.setIcon(DarkControlButtons.player.getCurrentSong().getArtWork());
+//            }
+//        }else
+//            artwork.setIcon(MyIcons.DarkNoArtworkSmall);
+
+
 
         add(artwork , BorderLayout.CENTER);
 
         JPanel musicInfo = new JPanel(new BorderLayout());
         musicInfo.setBackground(MyColors.DarkBackground);
-        songName.setText(song.getName());
-        songName.setHorizontalAlignment(JLabel.CENTER);
+        if(song.getName()!=null)
+            songName.setText(song.getName());
+        else
+            songName.setText("unknown");
+//        songName.setHorizontalAlignment(JLabel.CENTER);
         songName.setFont(MyFonts.arialBold);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setBackground(MyColors.DarkBackground);
 
         artistName.setText(song.getArtist());
-        artistName.setHorizontalAlignment(JLabel.CENTER);
+//        artistName.setHorizontalAlignment(JLabel.CENTER);
         artistName.setFont(MyFonts.arial);
         artistName.setForeground(MyColors.DarkerTextColor);
         artistName.setBackground(MyColors.DarkBackground);

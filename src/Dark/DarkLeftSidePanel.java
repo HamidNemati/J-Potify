@@ -16,6 +16,11 @@ public class DarkLeftSidePanel extends JPanel implements ActionListener {
     private JButton albumsButton;
     private DarkPlaylistPanel playlistPanel;
     public static JLabel artwork;
+
+    public DarkPlaylistPanel getPlaylistPanel() {
+        return playlistPanel;
+    }
+
     public DarkLeftSidePanel (){
         super();
         setBackground(MyColors.DarkFooter);
