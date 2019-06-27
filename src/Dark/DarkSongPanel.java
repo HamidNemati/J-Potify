@@ -17,8 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-import static Logic.Player.favouritePlaylist;
-import static Logic.Player.sharedPlaylist;
+import static Logic.Player.*;
 
 public class DarkSongPanel extends JPanel implements ActionListener {
     boolean isLiked ;
@@ -127,17 +126,18 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         remove.setBackground(MyColors.DarkMenu);
         remove.setForeground(MyColors.DarkTextColor);
         popup.add(remove);
+//        JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
         JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
             public void actionPerformed(ActionEvent e) {
-                //delete selected song
-                try {
-                    Main.darkFrame.getHomePanel().getHomePlayListPanel().add(song.getDarkHomeSongsItems());
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                }
+                DarkSelectAPlaylistFrame shit = new DarkSelectAPlaylistFrame(song);
 
             }
         });
+
+
+//        for (playList i : Player.getPlayLists()){
+//            addToPlaylist.add(i .getPlayListMenuItemForaddingSong());
+//        }
         addToPlaylist.setBackground(MyColors.DarkMenu);
         addToPlaylist.setForeground(MyColors.DarkTextColor);
         popup.add(addToPlaylist);
