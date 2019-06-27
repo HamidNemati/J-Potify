@@ -1,6 +1,8 @@
 package Dark;
 
+import Logic.Player;
 import Logic.Song;
+import Logic.playList;
 import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
@@ -28,6 +30,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
     JButton more;
     JPanel buttons;
     JPanel songInfo;
+    Song song;
 
     //    public DarkSongPanel(){
     public DarkSongPanel(Song song){
@@ -35,6 +38,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
 //        super(new GridLayout(1,5));
 //        setBorder(new EmptyBorder(5,5,5,5));
         buttons = new JPanel(new GridLayout(1 , 3));
+        this.song = song;
 
 
             setMinimumSize(new Dimension(1200, 30));
@@ -195,13 +199,17 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         if(e.getSource()==likeButton){
             System.out.println("like button pressed!");
             if(isLiked){
+                Player.removeSongFromPlayList( this.song ,  Player.favouritePlaylist);
                 likeButton.setIcon(MyIcons.Darklike);
                 isLiked = false;
                 System.out.println("unliked...");
             }else{
+                Player.addSongToPlayList( this.song ,  Player.favouritePlaylist);
+
                 likeButton.setIcon(MyIcons.Darkliked);
                 isLiked = true;
                 System.out.println("liked...");
+
             }
         } else if(e.getSource()==shareButton){
             System.out.println("share button pressed!");

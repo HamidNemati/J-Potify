@@ -23,6 +23,8 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     private JPanel homePlayListPanel;
     private JPanel homeSongPanel;
     private JButton addSong;
+    private JButton addPlaylist;
+
     private JButton showAllSongs;
     private JButton showAllPlaylists;
     private ArrayList<DarkSongPanel> songPanelsArraylist;//for songs
@@ -30,8 +32,13 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     private ArrayList<DarkHomePlaylistsItems> homePlaylistsArraylist;//for home
     private JFileChooser fileChooser;
     private JPanel songsList;
+    private JPanel playlistsList;
     String filePath;
     String filename;
+
+    public JPanel getPlaylistsList() {
+        return playlistsList;
+    }
 
     public JPanel getHomePlayListPanel() {
         return homePlayListPanel;
@@ -48,6 +55,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
     public JPanel getHomeSongPanel() {
         return homeSongPanel;
     }
+
 
     public DarkMainPanel(String headerName){// non playlist pages
         super();
@@ -92,8 +100,8 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             playlistBorder.setTitleColor(MyColors.DarkTextColor);
             homePlayListPanel.setBorder(playlistBorder);
             homePlayListPanel.setBackground(MyColors.DarkBackground);
-            homePlayListPanel.add(Player.sharedPlaylist.getHomePlaylistsItems());
-            homePlayListPanel.add(Player.favouritePlaylist.getHomePlaylistsItems());
+            homePlayListPanel.add(Player.sharedPlaylist.getHomePlaylistsItemsForPlayListsPanel());
+            homePlayListPanel.add(Player.favouritePlaylist.getHomePlaylistsItemsForPlayListsPanel());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());
 //            homePlayListPanel.add(new DarkHomePlaylistsItems());
@@ -157,6 +165,9 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             JPanel showAllSongsPanel = new JPanel(new BorderLayout());
             showAllSongsPanel.setBackground(MyColors.DarkBackground);
             showAllSongsPanel.add(showAllSongs , BorderLayout.EAST);
+//            JScrollPane scrollPane = new JScrollPane();
+//            scrollPane.se
+
 
             homeSongPanelPanel.add(showAllSongsPanel , BorderLayout.SOUTH);
             body.add(homeSongPanelPanel);
@@ -185,6 +196,34 @@ public class DarkMainPanel extends JPanel implements ActionListener {
         }else  if(headerName.equals("ALBUMS")){
 
             body.setBorder(new EmptyBorder(5,20,20,20));
+        }else if(headerName.equals("PLAYLISTS")){
+            body.setLayout(new BorderLayout());
+            JPanel playlistsListpanel = new JPanel(new BorderLayout());
+            playlistsList = new JPanel();
+            playlistsList.setLayout(new FlowLayout());
+//            playlistsList.setLayout(new GridLayout(4,4));
+
+            playlistsList.setBackground(MyColors.Trancparent);
+            playlistsList.setMinimumSize(new Dimension(1000,500));
+            playlistsList.setMaximumSize(new Dimension(1000,500));
+            addPlaylist = new JButton("add Playlist");
+            addPlaylist.addActionListener(this);
+            addPlaylist.setBackground(MyColors.DarkerTextColor);
+            addPlaylist.setForeground(Color.white);
+            addPlaylist.setFocusable(false);
+            addPlaylist.setBorderPainted(false);
+            playlistsListpanel.setBackground(MyColors.DarkBackground);
+            playlistsListpanel.add(addPlaylist , BorderLayout.NORTH);
+            playlistsListpanel.add(playlistsList , BorderLayout.CENTER);
+
+            playlistsList.add(Player.sharedPlaylist.getHomePlaylistsItems());
+            playlistsList.add(Player.favouritePlaylist.getHomePlaylistsItems());
+
+            body.add(playlistsListpanel);
+//            body.add(addPlaylist , BorderLayout.NORTH);
+
+            body.setBorder(new EmptyBorder(5,20,20,20));
+//            body.add(addPlaylist , BorderLayout.CENTER);
         }
 
         add(body, BorderLayout.CENTER);
@@ -258,6 +297,9 @@ public class DarkMainPanel extends JPanel implements ActionListener {
         }else if (e.getSource()==showAllSongs){
             System.out.println("SONGS");
             Main.darkFrame.addSongsToMainPanel();
+        }else if (e.getSource()==addPlaylist){
+            System.out.println("adding a playlist:");
+            DarkAddPlaylistFrame addPlaylistFrame = new DarkAddPlaylistFrame();
         }
 
     }

@@ -114,6 +114,7 @@ public class DarkFrame extends JFrame {
 
 
     public void addSongsToMainPanel(){
+//        removeAll();
         remove(albumsPanel );
         remove(playlistPanel );
         remove(homePanel);
@@ -124,9 +125,11 @@ public class DarkFrame extends JFrame {
         songsPanel.setVisible(true);
     }
     public void addHomeToMainPanel(){
-//        remove(albumsPanel );
-//        remove(playlistPanel );
-//        remove(songsPanel);
+//        removeAll();
+
+        remove(albumsPanel );
+        remove(playlistPanel );
+        remove(songsPanel);
         add(homePanel , BorderLayout.CENTER);
         albumsPanel .setVisible(false);
         playlistPanel .setVisible(false);
@@ -134,6 +137,8 @@ public class DarkFrame extends JFrame {
         homePanel.setVisible(true);
     }
     public void addAlbumsToMainPanel(){
+//        removeAll();
+
         remove(playlistPanel );
         remove(songsPanel );
         remove(homePanel);
@@ -150,9 +155,9 @@ public class DarkFrame extends JFrame {
         remove(homePanel);
         add(playlistPanel , BorderLayout.CENTER);
         albumsPanel .setVisible(false);
-        playlistPanel .setVisible(true);
         songsPanel.setVisible(false);
         homePanel.setVisible(false);
+        playlistPanel .setVisible(true);
 
     }
 
