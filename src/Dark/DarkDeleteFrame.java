@@ -9,11 +9,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static Logic.Player.favouritePlaylist;
+import static Logic.Player.sharedPlaylist;
+
 public class DarkDeleteFrame extends JFrame implements ActionListener {
 
     private JButton delete = new JButton("DELETE");
     private JButton cancel = new JButton("CANCEL");
+    Song song;
     public DarkDeleteFrame(Song song){
+        super();
+        this.song = song;
         setMinimumSize(new Dimension(600,400));
         setMaximumSize(new Dimension(600,400));
         setResizable(false);
@@ -70,8 +76,35 @@ public class DarkDeleteFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==delete){
             //remove the song
+            Main.darkFrame.getHomePanel().getHomeSongsArraylist().remove(song.getDarkHomeSongsItems());
+            Main.darkFrame.getHomePanel().getHomeSongPanel().remove(song.getDarkHomeSongsItems());
+
+            Main.darkFrame.getSongsPanel().getSongsList().remove(song.getDarkSongPanel());
+
+            if(song.getLiked()==true){
+                favouritePlaylist.getPlayListSongsFrame().songsList.remove(song.getDarkSongPanelForPlaylistMainPanel());
+                favouritePlaylist.getPlayListSongsFrame().songsList.setVisible(false);
+                favouritePlaylist.getPlayListSongsFrame().songsList.setVisible(true);
+                favouritePlaylist.getPlayListSongsFrame().setVisible(false);
+                favouritePlaylist.getPlayListSongsFrame().setVisible(true);
+
+            }
+            if(song.getShared()==true){
+                sharedPlaylist.getPlayListSongsFrame().songsList.remove(song.getDarkSongPanelForPlaylistMainPanel());
+                sharedPlaylist.getPlayListSongsFrame().songsList.setVisible(false);
+                sharedPlaylist.getPlayListSongsFrame().songsList.setVisible(true);
+            }
+
+            Main.darkFrame.getHomePanel().setVisible(false);
+            Main.darkFrame.getHomePanel().setVisible(true);
+            Main.darkFrame.getSongsPanel().getSongsList().setVisible(false);
+            Main.darkFrame.getSongsPanel().getSongsList().setVisible(true);
+            Main.darkFrame.getSongsPanel().setVisible(false);
+            Main.darkFrame.getSongsPanel().setVisible(true);
+            System.out.println("song removed succesfully");
+            this.dispose();
         }else if(e.getSource()==cancel){
-            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+            this.dispose();
         }
     }
 }

@@ -99,14 +99,29 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         JMenuItem remove = new JMenuItem(new AbstractAction("Remove Song") {
             public void actionPerformed(ActionEvent e)
             {
-//                DarkDeleteFrame deleteFrame = new DarkDeleteFrame(song);
-                Main.darkFrame.getHomePanel().getHomeSongsArraylist().remove(song.getDarkHomeSongsItems());
-                Main.darkFrame.getHomePanel().getHomeSongPanel().remove(song.getDarkHomeSongsItems());
-                Main.darkFrame.getHomePanel().setVisible(false);
-                Main.darkFrame.getHomePanel().setVisible(true);
-                Main.darkFrame.getSongsPanel().getSongsList().remove(song.getDarkSongPanel());
-                Main.darkFrame.getSongsPanel().getSongsList().setVisible(false);
-                Main.darkFrame.getSongsPanel().getSongsList().setVisible(true);
+                DarkDeleteFrame deleteFrame = new DarkDeleteFrame(song);
+//                Main.darkFrame.getHomePanel().getHomeSongsArraylist().remove(song.getDarkHomeSongsItems());
+//                Main.darkFrame.getHomePanel().getHomeSongPanel().remove(song.getDarkHomeSongsItems());
+//
+//                Main.darkFrame.getSongsPanel().getSongsList().remove(song.getDarkSongPanel());
+//
+//                if(song.getLiked()==true){
+//                    favouritePlaylist.getPlayListSongsFrame().songsList.remove(song.getDarkSongPanelForPlaylistMainPanel());
+//                    favouritePlaylist.getPlayListSongsFrame().songsList.setVisible(false);
+//                    favouritePlaylist.getPlayListSongsFrame().songsList.setVisible(true);
+//
+//                }
+//                if(song.getShared()==true){
+//                    sharedPlaylist.getPlayListSongsFrame().songsList.remove(song.getDarkSongPanelForPlaylistMainPanel());
+//                    sharedPlaylist.getPlayListSongsFrame().songsList.setVisible(false);
+//                    sharedPlaylist.getPlayListSongsFrame().songsList.setVisible(true);
+//                }
+//
+//                Main.darkFrame.getHomePanel().setVisible(false);
+//                Main.darkFrame.getHomePanel().setVisible(true);
+//                Main.darkFrame.getSongsPanel().getSongsList().setVisible(false);
+//                Main.darkFrame.getSongsPanel().getSongsList().setVisible(true);
+
             }
         });
         remove.setBackground(MyColors.DarkMenu);
