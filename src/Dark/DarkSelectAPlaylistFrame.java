@@ -42,6 +42,8 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
         header.setBackground(MyColors.DarkMenu);
         add(header, BorderLayout.NORTH);
 
+        JPanel bodyBody = new JPanel(new BorderLayout());
+
 
         JPanel body = new JPanel();
         body.setLayout(new FlowLayout());
@@ -79,9 +81,18 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
 
         body.setBorder(new EmptyBorder(5, 20, 20, 20));
 //            body.add(addPlaylist , BorderLayout.CENTER);
+        bodyBody.add(body , BorderLayout.CENTER);
+        bodyBody.setBackground(MyColors.DarkBackground);
+        JLabel text = new JLabel("Select one of your own playlists to add \""+song.getName() + "\" to it...");
+        text.setFont(MyFonts.arialBold);
+        text.setBackground(MyColors.DarkBackground);
+        text.setForeground(MyColors.DarkTextColor);
+        text.setHorizontalAlignment(JLabel.CENTER);
 
 
-        add(body, BorderLayout.CENTER);
+        bodyBody.add(text , BorderLayout.NORTH);
+
+        add(bodyBody, BorderLayout.CENTER);
         setVisible(true);
     }
 
@@ -94,7 +105,10 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
         for (playList i : playlistIcons) {
             if(e.getSource()==i.getHomePlaylistsItemsForSelectingPlayListFrame()){
                 i.addSongs(addedSong);
+                break;
             }
         }
+        this.dispose();
+
     }
 }

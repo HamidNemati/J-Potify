@@ -24,6 +24,7 @@ public class DarkPlaylistTitle extends JButton implements ActionListener {
     public DarkPlaylistTitle(playList playList){
 //        super(new BorderLayout());
         super();
+        setPreferredSize(new Dimension(200,40));
         this.playList = playList;
         addActionListener(this);
         setLayout(new BorderLayout());

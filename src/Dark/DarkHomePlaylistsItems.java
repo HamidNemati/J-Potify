@@ -25,6 +25,7 @@ import java.awt.event.ActionListener;
 
         setBorderPainted(false);
         addActionListener(this);
+        setPreferredSize(new Dimension(170, 126));
 
         artwork = new JLabel();
         songName = new JLabel();
@@ -32,6 +33,7 @@ import java.awt.event.ActionListener;
         setBackground(MyColors.DarkBackground);
         artwork.setMaximumSize(new Dimension(100,100));
         artwork.setMinimumSize(new Dimension(100,100));
+        artwork.setHorizontalAlignment(JLabel.CENTER);
         artwork.setSize(100,100);
         artwork.setBackground(MyColors.DarkBackground);
 
@@ -45,8 +47,8 @@ import java.awt.event.ActionListener;
         songName.setSize(100,50);
         songName.setMinimumSize(new Dimension(100,50));
         songName.setMaximumSize(new Dimension(100,50));
-        songName.setBorder(new EmptyBorder(0,0,0,10));
-//        songName.setHorizontalAlignment(JLabel.CENTER);
+//        songName.setBorder(new EmptyBorder(0,5,0,5));
+        songName.setHorizontalAlignment(JLabel.CENTER);
         songName.setFont(MyFonts.arialBold);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setBackground(MyColors.DarkBackground);
@@ -59,37 +61,6 @@ import java.awt.event.ActionListener;
 
     }
 
-
-    public DarkHomePlaylistsItems(){
-        super();
-        setBorder(new EmptyBorder(0,10,0,0));
-        artwork = new JLabel();
-        songName = new JLabel();
-        setLayout(new BorderLayout());
-        setBackground(MyColors.DarkBackground);
-        artwork.setMaximumSize(new Dimension(100,100));
-        artwork.setMinimumSize(new Dimension(100,100));
-        artwork.setSize(100,100);
-
-        artwork.setIcon(MyIcons.DarkNoArtworkSmall);
-
-        add(artwork , BorderLayout.CENTER);
-
-        JPanel musicInfo = new JPanel(new BorderLayout());
-        musicInfo.setBackground(MyColors.DarkBackground);
-        songName.setText("Playlist");
-//        songName.setHorizontalAlignment(JLabel.CENTER);
-        songName.setFont(MyFonts.arialBold);
-        songName.setForeground(MyColors.DarkTextColor);
-        songName.setBackground(MyColors.DarkBackground);
-
-
-
-
-        musicInfo.add(songName , BorderLayout.NORTH);
-        add(musicInfo , BorderLayout.SOUTH);
-
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

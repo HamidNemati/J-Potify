@@ -220,7 +220,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 System.out.println("--------------------------\nunliking");
                 isLiked = false;
                 song.setLiked(false);
-                Player.removeSongFromPlayList( this.song ,  favouritePlaylist);
+                Player.removeSongFromPlayList( this.song ,  Player.favouritePlaylist);
                 likeButton.setIcon(MyIcons.Darklike);
 
                 System.out.println("unliked...");
@@ -228,7 +228,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 System.out.println("--------------------------\nliking");
                 isLiked = true;
                 song.setLiked(true);
-                Player.addSongToPlayList( this.song ,  favouritePlaylist);
+                Player.addSongToPlayList( this.song ,  Player.favouritePlaylist);
                 likeButton.setIcon(MyIcons.Darkliked);
 
 
@@ -238,14 +238,14 @@ public class DarkSongPanel extends JPanel implements ActionListener {
             System.out.println("share button pressed!");
             if(isShared){
                 System.out.println("--------------------------\nunsharing");
-                Player.removeSongFromPlayList( this.song ,  sharedPlaylist);
+                Player.removeSongFromPlayList( this.song , Player. sharedPlaylist);
                 shareButton.setIcon(MyIcons.DarkShare);
                 isShared = false;
                 song.setShared(false);
                 System.out.println("unshare...");
             }else {
                 System.out.println("--------------------------\nsharing");
-                Player.addSongToPlayList(this.song, sharedPlaylist);
+                Player.addSongToPlayList(this.song, Player.sharedPlaylist);
 //                sharedPlaylist.addSongs(this.song);
 //                System.out.println(this.song.getName() + " added to " + sharedPlaylist.getName());
 //                System.out.println(sharedPlaylist.getSongs().size() + " songs in \""+ sharedPlaylist.getName()+"\" playlist");

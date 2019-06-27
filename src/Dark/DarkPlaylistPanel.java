@@ -48,6 +48,8 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
 //        JPanel playlistsList = new JPanel(new BorderLayout());// a panel that shows all of the playlists
         playlistsList = new JPanel();// a panel that shows all of the playlists
         playlistsList.setLayout(new BoxLayout(playlistsList , BoxLayout.Y_AXIS));
+//        playlistsList.setLayout(new FlowLayout());
+//        playlistsList.setLayout(new GridLayout(0,1));
         playlistsList.setBackground(MyColors.DarkLeftBar);
 
 
@@ -66,17 +68,13 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
             playlistsList.add(i);
         }
 
-        JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scrollPane.setPreferredSize(new Dimension(10, 600));
-        scrollPane.setBackground(Color.MAGENTA);
-        scrollPane.setBackground(Color.ORANGE);
-        scrollPane.setAlignmentX(LEFT_ALIGNMENT);
-
-//        playlistsList.add(scrollPane);
+        JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        /*scrollPane.setPreferredSize(new Dimension(10, 600));
+        playlistsList.add(scrollPane);*/
 
         add(playlistsList, BorderLayout.CENTER);
 
-//        add(scrollPane, BorderLayout.CENTER);
+//        Main.darkFrame.getContentPane().add(scrollPane);
 
 
         addPlaylistButton = new JButton(MyIcons.DarkAddPlaylistButton);

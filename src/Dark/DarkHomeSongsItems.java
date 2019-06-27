@@ -15,14 +15,16 @@ public class DarkHomeSongsItems extends JPanel {
     JLabel artwork;
     public DarkHomeSongsItems(Song song){
         super();
+        setBackground(MyColors.DarkBackground);
         artwork = new JLabel();
         songName = new JLabel();
         artistName = new JLabel();
         setLayout(new BorderLayout());
-
-        artwork.setMaximumSize(new Dimension(100,100));
-        artwork.setMinimumSize(new Dimension(100,100));
-
+        setPreferredSize(new Dimension(150, 126));
+artwork.setHorizontalAlignment(JLabel.CENTER);
+        artwork.setMaximumSize(new Dimension(50,50));
+        artwork.setMinimumSize(new Dimension(50,50));
+        artwork.setPreferredSize(new Dimension(50 ,50));
         artwork.setSize(100,100);
 //        if()
             artwork.setIcon(MyIcons.DarkNoArtworkSmall);
@@ -48,14 +50,14 @@ public class DarkHomeSongsItems extends JPanel {
             songName.setText(song.getName());
         else
             songName.setText("unknown");
-//        songName.setHorizontalAlignment(JLabel.CENTER);
-        songName.setFont(MyFonts.arialBold);
+        songName.setHorizontalAlignment(JLabel.CENTER);
+        songName.setFont(MyFonts.arial);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setBackground(MyColors.DarkBackground);
 
         artistName.setText(song.getArtist());
-//        artistName.setHorizontalAlignment(JLabel.CENTER);
-        artistName.setFont(MyFonts.arial);
+        artistName.setHorizontalAlignment(JLabel.CENTER);
+        artistName.setFont(MyFonts.arialForPlaylistButtons);
         artistName.setForeground(MyColors.DarkerTextColor);
         artistName.setBackground(MyColors.DarkBackground);
 

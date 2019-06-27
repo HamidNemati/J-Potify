@@ -143,16 +143,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             homeSongPanel.setBackground(MyColors.DarkBackground);
 //            homeSongPanel.add(new DarkHomeSongsItems());
 //            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            addASongItemToHome(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
-//            homeSongPanel.add(new DarkHomeSongsItems());
+
             homeSongPanelPanel.add(homeSongPanel ,BorderLayout.CENTER);
             showAllSongs = new JButton("show all songs...");
             showAllSongs.addActionListener(this);
@@ -165,9 +156,8 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             JPanel showAllSongsPanel = new JPanel(new BorderLayout());
             showAllSongsPanel.setBackground(MyColors.DarkBackground);
             showAllSongsPanel.add(showAllSongs , BorderLayout.EAST);
-//            JScrollPane scrollPane = new JScrollPane();
-//            scrollPane.se
-
+            /*JScrollPane scrollPane = new JScrollPane(homeSongPanel ,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+            add(scrollPane);*/
 
             homeSongPanelPanel.add(showAllSongsPanel , BorderLayout.SOUTH);
             body.add(homeSongPanelPanel);
@@ -183,7 +173,7 @@ public class DarkMainPanel extends JPanel implements ActionListener {
             songsList.setBackground(MyColors.Trancparent);
             songsList.setMinimumSize(new Dimension(1000,500));
             songsList.setMaximumSize(new Dimension(1000,500));
-            addSong = new JButton("addSong");
+            addSong = new JButton("Add Song");
             addSong.addActionListener(this);
             addSong.setBackground(MyColors.DarkerTextColor);
             addSong.setForeground(Color.white);

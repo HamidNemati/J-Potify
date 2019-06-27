@@ -21,6 +21,7 @@ public class DarkHomePlaylistsItemsForSelecting extends JButton implements Actio
     Song song;
     public DarkHomePlaylistsItemsForSelecting(playList playList){
         super();
+        setPreferredSize(new Dimension(150, 126));
 
         this.playlist = playList;
 //        this.song = song;
@@ -38,6 +39,7 @@ public class DarkHomePlaylistsItemsForSelecting extends JButton implements Actio
         artwork.setBackground(MyColors.DarkBackground);
 
         artwork.setIcon(MyIcons.DarkNoArtworkSmall);
+        artwork.setHorizontalAlignment(JLabel.CENTER);
 
         add(artwork , BorderLayout.CENTER);
 
@@ -48,7 +50,7 @@ public class DarkHomePlaylistsItemsForSelecting extends JButton implements Actio
         songName.setMinimumSize(new Dimension(100,50));
         songName.setMaximumSize(new Dimension(100,50));
         songName.setBorder(new EmptyBorder(0,0,0,10));
-//        songName.setHorizontalAlignment(JLabel.CENTER);
+        songName.setHorizontalAlignment(JLabel.CENTER);
         songName.setFont(MyFonts.arialBold);
         songName.setForeground(MyColors.DarkTextColor);
         songName.setBackground(MyColors.DarkBackground);
@@ -70,7 +72,8 @@ public class DarkHomePlaylistsItemsForSelecting extends JButton implements Actio
 //            Main.darkFrame.setAllMainPanelsInvisible();
 //            Main.darkFrame.addOnePlaylistPanelToTheMainPanel(this.playlist);
 //            this.playlist.getPlayListSongsFrame().setVisible(true);
-            playList.addSongs(song);
+            this.playlist.addSongs(song);
+
         }
     }
 
