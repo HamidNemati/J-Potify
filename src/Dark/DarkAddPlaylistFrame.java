@@ -110,7 +110,9 @@ public class DarkAddPlaylistFrame extends JFrame implements ActionListener {
             Main.darkFrame.getPlaylistPanel().getPlaylistsList().add(playList.getHomePlaylistsItemsForPlayListsPanel());
             Main.darkFrame.getPlaylistPanel().getPlaylistsList().setVisible(false);
             Main.darkFrame.getPlaylistPanel().getPlaylistsList().setVisible(true);
-            Main.darkFrame.addPlaylistsToMainPanel();
+            Main.darkFrame.getPlaylistPanel().setVisible(false);
+            Main.darkFrame.getPlaylistPanel().setVisible(true);
+//            Main.darkFrame.addPlaylistsToMainPanel();
 
 //            this.setVisible(false);
             this.dispose();

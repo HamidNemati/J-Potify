@@ -8,41 +8,24 @@ import MainPackage.MyIcons;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //public class DarkPlaylistTitle extends JPanel {
-public class DarkPlaylistTitle extends JButton {
+public class DarkPlaylistTitle extends JButton implements ActionListener {
 
     JLabel icon;
     JLabel name;
-//    public DarkPlaylistTitle(String playlistName){
-////        super(new BorderLayout());
-//        super();
-//        setLayout(new BorderLayout());
-//        setBackground(MyColors.DarkLeftBar);
-//        setBorder(new EmptyBorder(0,0,0,0));
-//        icon = new JLabel();
-//        icon.setBackground(MyColors.DarkLeftBar);
-//        name = new JLabel();
-//        name.setFont(MyFonts.arialForPlaylistButtons);
-//        name.setForeground(MyColors.DarkTextColor);
-//        name.setBorder(new EmptyBorder(0,60,0,0));
-//        name.setBorder(new EmptyBorder(0,0,0,0));
-//
-//        if(playlistName.equals("Shared Playlist"))
-//            icon.setIcon(MyIcons.DarkSharedPlayListTitle);//check
-//        else if(playlistName.equals("Favourite Playlist"))
-//            icon.setIcon(MyIcons.DarkFavouritePlayListTitle);//check
-//        else    icon.setIcon(MyIcons.DarkNormalPlayListTitle);//check
-//
-//
-//        name.setText(playlistName);
-//        add(icon , BorderLayout.WEST);
-//        add(name , BorderLayout.CENTER);
-//    }
+    playList playList;
+
+
+
+
     public DarkPlaylistTitle(playList playList){
 //        super(new BorderLayout());
         super();
-
+        this.playList = playList;
+        addActionListener(this);
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkLeftBar);
         setBorder(new EmptyBorder(0,0,0,0));
@@ -64,5 +47,14 @@ public class DarkPlaylistTitle extends JButton {
         name.setText(playList.getName());
         add(icon , BorderLayout.WEST);
         add(name , BorderLayout.CENTER);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==this){
+            if(!this.playList.getPlayListSongsFrame().isVisible()){
+                this.playList.getPlayListSongsFrame().setVisible(true);
+            }
+        }
     }
 }

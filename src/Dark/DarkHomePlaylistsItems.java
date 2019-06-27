@@ -2,6 +2,7 @@ package Dark;
 
 import Logic.Song;
 import Logic.playList;
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
@@ -12,11 +13,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DarkHomePlaylistsItems extends JPanel implements ActionListener {
+//public class DarkHomePlaylistsItems extends JPanel implements ActionListener {
+    public class DarkHomePlaylistsItems extends JButton implements ActionListener {
     JLabel songName;
     JLabel artwork;
+    playList playlist;
     public DarkHomePlaylistsItems(playList playList){
         super();
+
+        this.playlist = playList;
+
+        setBorderPainted(false);
+        addActionListener(this);
+
         artwork = new JLabel();
         songName = new JLabel();
         setLayout(new BorderLayout());
@@ -84,6 +93,10 @@ public class DarkHomePlaylistsItems extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource()==this){
+//            Main.darkFrame.setAllMainPanelsInvisible();
+//            Main.darkFrame.addOnePlaylistPanelToTheMainPanel(this.playlist);
+            this.playlist.getPlayListSongsFrame().setVisible(true);
+        }
     }
 }

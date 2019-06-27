@@ -12,8 +12,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DarkMainPlaylistPanel extends JPanel implements ActionListener {
-
+public class DarkPlayListSongsFrame extends JFrame implements ActionListener {
     JLabel playlistHeaderTitle ;
     JLabel playlistHeaderNameTitle ;
     JLabel playlistHeaderDescription ;
@@ -72,8 +71,11 @@ public class DarkMainPlaylistPanel extends JPanel implements ActionListener {
 //
 //    }
 
-    public DarkMainPlaylistPanel(playList playlist){
-        super(new BorderLayout());
+    public DarkPlayListSongsFrame(playList playlist){
+        super();
+        setSize(new Dimension(600,500));
+
+        setLayout(new BorderLayout());
 //        JPanel header = new JPanel(new BorderLayout());
         GradientPanel header = new GradientPanel(MyColors.DarkerTextColor ,MyColors.DarkBackground );
 

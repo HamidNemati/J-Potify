@@ -66,13 +66,13 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
             playlistsList.add(i);
         }
 
-        JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(10, 600));
         scrollPane.setBackground(Color.MAGENTA);
         scrollPane.setBackground(Color.ORANGE);
         scrollPane.setAlignmentX(LEFT_ALIGNMENT);
 
-        add(scrollPane);
+//        playlistsList.add(scrollPane);
 
         add(playlistsList, BorderLayout.CENTER);
 
@@ -91,13 +91,6 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
         if(source==addPlaylistButton){
             System.out.println("adding a playlist:");
             DarkAddPlaylistFrame addPlaylistFrame = new DarkAddPlaylistFrame();
-//            DarkPlaylistTitle newPlaylist = new DarkPlaylistTitle("New Playlist");
-//            playlistsList = new JPanel();
-//            playlistsArraylist.add(newPlaylist);
-//            playlistsList.add(newPlaylist);
-//            for (DarkPlaylistTitle i : playlistsArraylist){
-//                playlistsList.add(i);
-//            }
         }else if(e.getSource()==playlistButton){
             System.out.println("Playlists");
             Main.darkFrame.addPlaylistsToMainPanel();

@@ -17,8 +17,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import static Logic.Player.favouritePlaylist;
+import static Logic.Player.sharedPlaylist;
+
 public class DarkSongPanel extends JPanel implements ActionListener {
-    boolean isLiked;
+    boolean isLiked ;
     boolean isShared;
     boolean playOrPaused;
     JLabel musicName;
@@ -199,28 +202,42 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         if(e.getSource()==likeButton){
             System.out.println("like button pressed!");
             if(isLiked){
-                Player.removeSongFromPlayList( this.song ,  Player.favouritePlaylist);
-                likeButton.setIcon(MyIcons.Darklike);
+                System.out.println("--------------------------\nunliking");
                 isLiked = false;
+                song.setLiked(false);
+                Player.removeSongFromPlayList( this.song ,  favouritePlaylist);
+                likeButton.setIcon(MyIcons.Darklike);
+
                 System.out.println("unliked...");
             }else{
-                Player.addSongToPlayList( this.song ,  Player.favouritePlaylist);
-
-                likeButton.setIcon(MyIcons.Darkliked);
+                System.out.println("--------------------------\nliking");
                 isLiked = true;
-                System.out.println("liked...");
+                song.setLiked(true);
+                Player.addSongToPlayList( this.song ,  favouritePlaylist);
+                likeButton.setIcon(MyIcons.Darkliked);
 
+
+                System.out.println("liked...");
             }
         } else if(e.getSource()==shareButton){
             System.out.println("share button pressed!");
             if(isShared){
+                System.out.println("--------------------------\nunsharing");
+                Player.removeSongFromPlayList( this.song ,  sharedPlaylist);
                 shareButton.setIcon(MyIcons.DarkShare);
                 isShared = false;
+                song.setShared(false);
                 System.out.println("unshare...");
-            }else{
+            }else {
+                System.out.println("--------------------------\nsharing");
+                Player.addSongToPlayList(this.song, sharedPlaylist);
+//                sharedPlaylist.addSongs(this.song);
+//                System.out.println(this.song.getName() + " added to " + sharedPlaylist.getName());
+//                System.out.println(sharedPlaylist.getSongs().size() + " songs in \""+ sharedPlaylist.getName()+"\" playlist");
                 shareButton.setIcon(MyIcons.DarkShared);
                 isShared = true;
-                System.out.println("share...");
+                song.setShared(true);
+                System.out.println("shared...");
             }
         }else if(e.getSource()==playAndPause){
             if(playOrPaused){

@@ -1,6 +1,8 @@
 package Dark;
 
+import Logic.Player;
 import Logic.playList;
+import MainPackage.Main;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 
@@ -18,14 +20,35 @@ public class DarkFrame extends JFrame {
     private DarkMainPanel playlistPanel;
     private DarkMainPanel songsPanel;
     private DarkMainPanel albumsPanel;
+    private DarkMainPlaylistPanel favouritePlayListPanel;
+    private DarkMainPlaylistPanel sharedPlayListPanel;
+
     private ArrayList<DarkMainPlaylistPanel> mainPlaylistPanelsArraylists;
 
-    DarkMainPlaylistPanel hardcore = new DarkMainPlaylistPanel(1);
-    DarkMainPlaylistPanel cactus = new DarkMainPlaylistPanel(new playList("good mood:)","what a wonderful fucking world"));
+//    DarkMainPlaylistPanel hardcore = new DarkMainPlaylistPanel(1);
+//    DarkMainPlaylistPanel cactus = new DarkMainPlaylistPanel(new playList("good mood:)","what a wonderful fucking world"));
     DarkMainAlbumPanel album = new DarkMainAlbumPanel(1);
 
     public ArrayList<DarkMainPlaylistPanel> getMainPlaylistPanelsArraylists() {
         return mainPlaylistPanelsArraylists;
+    }
+
+    public void setAllMainPanelsInvisible(){
+        remove( albumsPanel );
+        remove( playlistPanel );
+        remove( homePanel);
+        remove( songsPanel);
+        remove( sharedPlayListPanel);
+        remove( favouritePlayListPanel);
+        albumsPanel .setVisible(false);
+        playlistPanel .setVisible(false);
+        homePanel.setVisible(false);
+        songsPanel.setVisible(false);
+        sharedPlayListPanel.setVisible(false);
+        favouritePlayListPanel.setVisible(false);
+        for(DarkMainPlaylistPanel i : mainPlaylistPanelsArraylists){
+            i.setVisible(false);
+        }
     }
 
     public Dimension getMinimum() {
@@ -111,13 +134,36 @@ public class DarkFrame extends JFrame {
 
     private DarkMainPanel HARDCORE;
 
+    public void addOnePlaylistPanelToTheMainPanel(playList pl){
+        addPlaylistsToMainPanel();
+        playlistPanel.setVisible(false);
+//        remove(playlistPanel);
+//        remove( albumsPanel );
+//        remove( playlistPanel );
+//        remove( homePanel);
+//        remove( songsPanel);
+////        remove( sharedPlayListPanel);
+////        remove( favouritePlayListPanel);
+//        albumsPanel .setVisible(false);
+//        playlistPanel .setVisible(false);
+//        homePanel.setVisible(false);
+//        songsPanel.setVisible(false);
+//        sharedPlayListPanel.setVisible(false);
+//        favouritePlayListPanel.setVisible(false);
+//        setAllMainPanelsInvisible();
+        add(pl.getMainPlaylistPanel() , BorderLayout.CENTER);
+        pl.getMainPlaylistPanel().setVisible(true);
+    }
 
 
     public void addSongsToMainPanel(){
 //        removeAll();
+        setAllMainPanelsInvisible();
         remove(albumsPanel );
         remove(playlistPanel );
         remove(homePanel);
+        remove(sharedPlayListPanel);
+        remove(favouritePlayListPanel);
         add(songsPanel , BorderLayout.CENTER);
         albumsPanel .setVisible(false);
         playlistPanel .setVisible(false);
@@ -126,36 +172,52 @@ public class DarkFrame extends JFrame {
     }
     public void addHomeToMainPanel(){
 //        removeAll();
+//        setAllMainPanelsInvisible();
 
         remove(albumsPanel );
         remove(playlistPanel );
         remove(songsPanel);
+        remove(sharedPlayListPanel);
+        remove(favouritePlayListPanel);
         add(homePanel , BorderLayout.CENTER);
         albumsPanel .setVisible(false);
         playlistPanel .setVisible(false);
         songsPanel.setVisible(false);
+        sharedPlayListPanel.setVisible(false);
+        favouritePlayListPanel.setVisible(false);
         homePanel.setVisible(true);
     }
     public void addAlbumsToMainPanel(){
 //        removeAll();
+//        setAllMainPanelsInvisible();
 
         remove(playlistPanel );
         remove(songsPanel );
         remove(homePanel);
+        remove(sharedPlayListPanel);
+        remove(favouritePlayListPanel);
         add(albumsPanel , BorderLayout.CENTER);
         albumsPanel .setVisible(true);
         playlistPanel .setVisible(false);
         songsPanel.setVisible(false);
         homePanel.setVisible(false);
+        sharedPlayListPanel.setVisible(false);
+        favouritePlayListPanel.setVisible(false);
 
     }
     public void addPlaylistsToMainPanel(){
+//        setAllMainPanelsInvisible();
+
         remove(albumsPanel );
         remove(songsPanel );
         remove(homePanel);
+        remove(sharedPlayListPanel);
+        remove(favouritePlayListPanel);
         add(playlistPanel , BorderLayout.CENTER);
         albumsPanel .setVisible(false);
         songsPanel.setVisible(false);
+        sharedPlayListPanel.setVisible(false);
+        favouritePlayListPanel.setVisible(false);
         homePanel.setVisible(false);
         playlistPanel .setVisible(true);
 
@@ -177,9 +239,17 @@ public class DarkFrame extends JFrame {
         playlistPanel = new DarkMainPanel("PLAYLISTS");
         albumsPanel = new DarkMainPanel("ALBUMS");
         mainPlaylistPanelsArraylists = new ArrayList<>();
+        favouritePlayListPanel = new DarkMainPlaylistPanel(Player.favouritePlaylist);
+        sharedPlayListPanel = new DarkMainPlaylistPanel(Player.sharedPlaylist);
 
 //        HARDCORE = new DarkMainPanel(1);
-
+//        JScrollPane scrollPane = new JScrollPane(rightSidePanel , ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+//        scrollPane.setPreferredSize(new Dimension(10, 600));
+//        scrollPane.setBackground(Color.MAGENTA);
+//        scrollPane.setBackground(Color.ORANGE);
+//        scrollPane.setAlignmentX(LEFT_ALIGNMENT);
+//
+//        add(scrollPane);
 
         setBackground(MyColors.DarkBackground);
         setSize(1366,720);
