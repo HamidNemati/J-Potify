@@ -1,7 +1,9 @@
 package MainPackage;
 
+import Dark.DarkAlbumSongsFrame;
 import Dark.DarkFrame;
 import Dark.DarkMusicInfo;
+import Dark.DarkPlayListSongsFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +16,7 @@ public class Main {
     public static boolean replayAllOrNot = false;
     public static void main(String[] args) throws Exception {
         darkFrame = new DarkFrame(playOrPause);
-
+//        JFrame sss = new DarkAlbumSongsFrame("THE WALL" , "PINK FLOYD");
 //         Scanner scanner = new Scanner(System.in);
 //         int x = scanner.nextInt();
 //         playOrPause=true;
