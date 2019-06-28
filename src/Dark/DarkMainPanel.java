@@ -269,6 +269,8 @@ public class DarkMainPanel extends JPanel implements ActionListener {
 //                    homeSongsPanel.add(new DarkHomeSongsItems());
 //                    homeSongsPanel.setVisible(true);
                     System.out.println("added to home list");
+                    Player.addOrCreateAlbum(song);
+
 
 
                 } catch (Exception e1) {

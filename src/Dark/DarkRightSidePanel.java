@@ -26,11 +26,7 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
         title.setIcon(MyIcons.DarkFriendsActivity);
         add(title, BorderLayout.NORTH);
 
-//        add(new JScrollBar());
-//        JScrollPane scrollPane = new JScrollPane();
-//        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-//        scrollPane.setBounds(50, 30, 300, 50);
+
         body = new JPanel();
         body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
         body.setBackground(MyColors.Trancparent);
@@ -42,12 +38,17 @@ public class DarkRightSidePanel extends JPanel  implements ActionListener {
         myFriends.add(new DarkFriendsInfo("Darya_zm","Sing Me to Sleep", "Allen Walker"));
         myFriends.add(new DarkFriendsInfo("tarrat","KILL4ME", "Marilyn Manson"));
 
-
+        JScrollPane scrollPane = new JScrollPane(body , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.getVerticalScrollBar().setBackground(MyColors.DarkFooter);
+        scrollPane.setBorder(new EmptyBorder(0,0,0,0));
+        this.add(scrollPane);
 
         for(DarkFriendsInfo i : myFriends){
             body.add(i);
         }
-        add(body , BorderLayout.CENTER);
+
+
+        add(scrollPane , BorderLayout.CENTER);
 
         addFriend = new JButton(MyIcons.DarkAddFriend);
         addFriend.setFocusable(false);

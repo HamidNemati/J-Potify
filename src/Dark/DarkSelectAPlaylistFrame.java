@@ -57,6 +57,11 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
         playlistsList.setMinimumSize(new Dimension(1000, 500));
         playlistsList.setMaximumSize(new Dimension(1000, 500));
 
+        JScrollPane scrollPane = new JScrollPane(body , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.getVerticalScrollBar().setBackground(MyColors.DarkFooter);
+        scrollPane.setBorder(new EmptyBorder(0,0,0,0));
+        this.add(scrollPane);
+
         playlistsListpanel.setBackground(MyColors.DarkBackground);
         playlistsListpanel.add(playlistsList, BorderLayout.CENTER);
 
@@ -81,7 +86,7 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
 
         body.setBorder(new EmptyBorder(5, 20, 20, 20));
 //            body.add(addPlaylist , BorderLayout.CENTER);
-        bodyBody.add(body , BorderLayout.CENTER);
+        bodyBody.add(scrollPane , BorderLayout.CENTER);
         bodyBody.setBackground(MyColors.DarkBackground);
         JLabel text = new JLabel("Select one of your own playlists to add \""+song.getName() + "\" to it...");
         text.setFont(MyFonts.arialBold);
@@ -91,6 +96,8 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
 
 
         bodyBody.add(text , BorderLayout.NORTH);
+
+
 
         add(bodyBody, BorderLayout.CENTER);
         setVisible(true);

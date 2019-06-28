@@ -24,12 +24,14 @@ public class DarkPlaylistTitle extends JButton implements ActionListener {
     public DarkPlaylistTitle(playList playList){
 //        super(new BorderLayout());
         super();
-        setPreferredSize(new Dimension(200,40));
+        setPreferredSize(new Dimension(190,40));
         this.playList = playList;
         addActionListener(this);
         setLayout(new BorderLayout());
         setBackground(MyColors.DarkLeftBar);
         setBorder(new EmptyBorder(0,0,0,0));
+        setBorderPainted(false);
+        setFocusable(false);
         icon = new JLabel();
         icon.setBackground(MyColors.DarkLeftBar);
         name = new JLabel();

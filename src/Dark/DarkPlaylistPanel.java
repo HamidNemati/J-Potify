@@ -66,13 +66,14 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
 
         for (DarkPlaylistTitle i : playlistsArraylist){
             playlistsList.add(i);
+
         }
 
         JScrollPane scrollPane = new JScrollPane(playlistsList , ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        /*scrollPane.setPreferredSize(new Dimension(10, 600));
-        playlistsList.add(scrollPane);*/
-
-        add(playlistsList, BorderLayout.CENTER);
+        scrollPane.getVerticalScrollBar().setBackground(MyColors.DarkFooter);
+        scrollPane.setBorder(new EmptyBorder(0,0,0,0));
+        this.add(scrollPane);
+//        add(playlistsList, BorderLayout.CENTER);
 
 //        Main.darkFrame.getContentPane().add(scrollPane);
 
