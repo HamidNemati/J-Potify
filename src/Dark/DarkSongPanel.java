@@ -22,13 +22,13 @@ import static Logic.Player.*;
 public class DarkSongPanel extends JPanel implements ActionListener {
     boolean isLiked ;
     boolean isShared;
-    boolean playOrPaused;
+    public boolean playOrPaused;
     JLabel musicName;
     JLabel artistName;
     JLabel time;
     JButton shareButton;
     JButton likeButton;
-    JButton playAndPause;
+    public JButton playAndPause;
     JButton more;
     JPanel buttons;
     JPanel songInfo;
@@ -127,6 +127,9 @@ public class DarkSongPanel extends JPanel implements ActionListener {
         remove.setForeground(MyColors.DarkTextColor);
         popup.add(remove);
 //        JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
+
+
+
         JMenuItem addToPlaylist = new JMenuItem(new AbstractAction("Add to PlayList") {
             public void actionPerformed(ActionEvent e) {
                 DarkSelectAPlaylistFrame shit = new DarkSelectAPlaylistFrame(song);
@@ -220,7 +223,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 System.out.println("--------------------------\nunliking");
                 isLiked = false;
                 song.setLiked(false);
-                Player.removeSongFromPlayList( this.song ,  Player.favouritePlaylist);
+                DarkControlButtons.player.removeSongFromPlayList( this.song ,  DarkControlButtons.player.favouritePlaylist);
                 likeButton.setIcon(MyIcons.Darklike);
 
                 System.out.println("unliked...");
@@ -228,7 +231,7 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 System.out.println("--------------------------\nliking");
                 isLiked = true;
                 song.setLiked(true);
-                Player.addSongToPlayList( this.song ,  Player.favouritePlaylist);
+                DarkControlButtons.player.addSongToPlayList( this.song ,  DarkControlButtons.player.favouritePlaylist);
                 likeButton.setIcon(MyIcons.Darkliked);
 
 
@@ -238,14 +241,15 @@ public class DarkSongPanel extends JPanel implements ActionListener {
             System.out.println("share button pressed!");
             if(isShared){
                 System.out.println("--------------------------\nunsharing");
-                Player.removeSongFromPlayList( this.song , Player. sharedPlaylist);
+                DarkControlButtons.player.removeSongFromPlayList( this.song , DarkControlButtons.player. sharedPlaylist);
                 shareButton.setIcon(MyIcons.DarkShare);
                 isShared = false;
                 song.setShared(false);
                 System.out.println("unshare...");
             }else {
                 System.out.println("--------------------------\nsharing");
-                Player.addSongToPlayList(this.song, Player.sharedPlaylist);
+                DarkControlButtons.player.addSongToPlayList(this.song, DarkControlButtons.player.sharedPlaylist);
+                System.out.println(DarkControlButtons.player.getSharedPlaylist().getSongs().size());
 //                sharedPlaylist.addSongs(this.song);
 //                System.out.println(this.song.getName() + " added to " + sharedPlaylist.getName());
 //                System.out.println(sharedPlaylist.getSongs().size() + " songs in \""+ sharedPlaylist.getName()+"\" playlist");
@@ -255,14 +259,41 @@ public class DarkSongPanel extends JPanel implements ActionListener {
                 System.out.println("shared...");
             }
         }else if(e.getSource()==playAndPause){
-            if(playOrPaused){
+            if (DarkControlButtons.player.getPlayThread().isAlive()) {
+                System.out.println("interrupting...");
+                DarkControlButtons.player.getPlayThread().suspend();
+            }
+            System.out.println("play or pause button pressed!");
+            if (DarkControlButtons.player.getCurrentSong() == null) DarkControlButtons.player.setCurrentSong(this.song);
+            if (DarkControlButtons.player.getCurrentSong() != this.song) {
+                DarkControlButtons.player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPlaySmall);
+                DarkControlButtons.player.setCurrentSong(this.song);
+                DarkControlButtons.player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPlaySmall);
+                DarkControlButtons.player.getCurrentSong().getDarkSongPanel().playOrPaused = false;
+                DarkControlButtons.playOrPauseParameter = false;
+            }
+            if(DarkControlButtons.playOrPauseParameter){
+                DarkControlButtons.playOrPause.setIcon(MyIcons.DarkPlay);
                 playAndPause.setIcon(MyIcons.DarkPlaySmall);
-                playOrPaused = false;
+                DarkControlButtons.playOrPauseParameter = false;
+                if (DarkControlButtons.player.getPlayThread().isAlive())
+                    DarkControlButtons.player.getPlayThread().suspend();
                 System.out.println("paused...");
             }else{
+                DarkControlButtons.playOrPause.setIcon(MyIcons.DarkPause);
                 playAndPause.setIcon(MyIcons.DarkPauseSmall);
-                playOrPaused = true;
+                DarkControlButtons.playOrPauseParameter = true;
+                if (DarkControlButtons.player.getPlayThread().isAlive())
+                    DarkControlButtons.player.getPlayThread().resume();
+                else {
+//                    player.getPlayThread().suspend();
+                    DarkControlButtons.player.getPlayThread().start();
+                }
+//                DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
+
+                System.out.println("................................");
                 System.out.println("playing...");
+
             }
         }
     }

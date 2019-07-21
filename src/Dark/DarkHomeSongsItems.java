@@ -27,7 +27,8 @@ artwork.setHorizontalAlignment(JLabel.CENTER);
         artwork.setPreferredSize(new Dimension(50 ,50));
         artwork.setSize(100,100);
 //        if()
-            artwork.setIcon(MyIcons.DarkNoArtworkSmall);
+            artwork.setIcon(song.getArtWorkSmall()
+            );
 //
 //            artwork.setIcon(song.getArtWorkSmall());
 

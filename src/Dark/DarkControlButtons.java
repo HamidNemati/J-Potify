@@ -18,7 +18,7 @@ public class DarkControlButtons extends JPanel implements ActionListener {
     public static boolean replayAllOrNot = true;
 
     JButton replay = new JButton(MyIcons.DarkReplayAll);
-    JButton playOrPause = new JButton();
+    static JButton playOrPause = new JButton();
     JButton next = new JButton(MyIcons.DarkNext);
     JButton previous = new JButton(MyIcons.DarkPrevious);
     JButton shuffle = new JButton(MyIcons.DarkShuffleOff);
@@ -104,19 +104,28 @@ public class DarkControlButtons extends JPanel implements ActionListener {
         String action = e.getActionCommand();
         if (action.equals("play/Pause")) {//changing the icon of play or pause
             System.out.println("play or pause button pressed!");
+
             if(playOrPauseParameter){
                 playOrPause.setIcon(MyIcons.DarkPlay);
+                if (player.getCurrentSong() == null){
+                    player.setCurrentSong(player.getCurrentPlayList().get(0));
+                }
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPlaySmall);
                 playOrPauseParameter = false;
                 if (player.getPlayThread().isAlive())
                     player.getPlayThread().suspend();
                 System.out.println("paused...");
             }else{
                 playOrPause.setIcon(MyIcons.DarkPause);
+                if (player.getCurrentSong() == null){
+                    player.setCurrentSong(player.getCurrentPlayList().get(0));
+                }
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPauseSmall);
                 playOrPauseParameter = true;
                 if (player.getPlayThread().isAlive())
                     player.getPlayThread().resume();
                 else {
-
+//                    player.getPlayThread().suspend();
                     player.getPlayThread().start();
                 }
 //                DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
@@ -156,33 +165,48 @@ public class DarkControlButtons extends JPanel implements ActionListener {
         if (action.equals("next")) {//next
             int index = player.getCurrentPlayList().indexOf(player.getCurrentSong());
             if (player.getCurrentPlayList().size() > index){
-                player.getPlayThread().stop();
+
+                player.getPlayThread().suspend();
+                System.out.println("current index: " + index);
+                player.getCurrentSong().getDarkSongPanel().playOrPaused = false;
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPlaySmall);
                 player.setCurrentSong(player.getCurrentPlayList().get(index + 1));
-                if(playOrPauseParameter){
-                    System.out.println("?|?|?|??|??|??||?|?|?|?|?|?|?||");
-                    playOrPause.setIcon(MyIcons.DarkPlay);
-                    playOrPauseParameter = false;
-                    if (player.getPlayThread().isAlive())
-                        player.getPlayThread().suspend();
-                    System.out.println("paused...");
-//                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
-                }
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPauseSmall);
+                System.out.println("current index: " + player.getCurrentPlayList().indexOf(player.getCurrentSong()));
+                System.out.println("total indexes: "+player.getCurrentPlayList().size());
+//                if(playOrPauseParameter){
+//                    System.out.println("?|?|?|??|??|??||?|?|?|?|?|?|?||");
+//                    playOrPause.setIcon(MyIcons.DarkPlay);
+//                    playOrPauseParameter = false;
+//                    if (player.getPlayThread().isAlive())
+//                        player.getPlayThread().suspend();
+//                    System.out.println("paused...");
+////                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
+//                }
+                playOrPauseParameter = true;
+                playOrPause.setIcon(MyIcons.DarkPause);
+
             }else System.out.println("Next song doesnt exist!");
             System.out.println("next button pressed!");
         }
         if (action.equals("previous")) {//previous
             int index = player.getCurrentPlayList().indexOf(player.getCurrentSong());
             if (index > 0){
-                player.getPlayThread().stop();
+                player.getPlayThread().suspend();
+                player.getCurrentSong().getDarkSongPanel().playOrPaused = false;
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPlaySmall);
                 player.setCurrentSong(player.getCurrentPlayList().get(index - 1));
-                if(playOrPauseParameter){
-                    playOrPause.setIcon(MyIcons.DarkPlay);
-                    playOrPauseParameter = false;
-                    if (player.getPlayThread().isAlive())
-                        player.getPlayThread().suspend();
-                    System.out.println("paused...");
-//                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
-                }
+                player.getCurrentSong().getDarkSongPanel().playAndPause.setIcon(MyIcons.DarkPauseSmall);
+//                if(playOrPauseParameter){
+//                    playOrPause.setIcon(MyIcons.DarkPlay);
+//                    playOrPauseParameter = false;
+//                    if (player.getPlayThread().isAlive())
+//                        player.getPlayThread().suspend();
+//                    System.out.println("paused...");
+////                    DarkFooter.setDarkMusicInfo(player.getCurrentSong().getDarkMusicInfo());
+//                }
+                playOrPauseParameter = true;
+                playOrPause.setIcon(MyIcons.DarkPause);
                 System.out.println("previous button pressed!");
             }else System.out.println("Previous song does'nt exist");
 

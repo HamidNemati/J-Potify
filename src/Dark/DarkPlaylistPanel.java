@@ -54,8 +54,8 @@ public class DarkPlaylistPanel extends JPanel implements ActionListener {
 
 
 
-        sharedPlaylist = Player.sharedPlaylist.getPlaylistTitle();
-        favouritePlaylist = Player.favouritePlaylist.getPlaylistTitle();
+        sharedPlaylist = DarkControlButtons.player.sharedPlaylist.getPlaylistTitle();
+        favouritePlaylist = DarkControlButtons.player.favouritePlaylist.getPlaylistTitle();
 
 
         playlistsArraylist.add(sharedPlaylist);

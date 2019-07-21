@@ -5,7 +5,7 @@ import Logic.playList;
 import MainPackage.MyColors;
 import MainPackage.MyFonts;
 import MainPackage.MyIcons;
-import com.sun.deploy.panel.JavaPanel;
+//import com.sun.deletePlaylistTitleoy.panel.JavaPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +17,7 @@ public class DarkHomePlaylistsItemsForSelecting extends JButton implements Actio
 
     JLabel songName;
     JLabel artwork;
-    playList playlist;
+    public playList playlist;
     Song song;
     public DarkHomePlaylistsItemsForSelecting(playList playList){
         super();

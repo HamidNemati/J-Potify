@@ -75,7 +75,7 @@ public class DarkSelectAPlaylistFrame extends JFrame implements ActionListener {
 //        playlistIcons.add(Player.sharedPlaylist);
 //        playlistIcons.add(Player.favouritePlaylist);
 
-        for (playList i : Player.getPlayLists()) {
+        for (playList i : DarkControlButtons.player.getPlayLists()) {
             playlistsList.add(i.getHomePlaylistsItemsForSelectingPlayListFrame());
             playlistIcons.add(i);
             i.getHomePlaylistsItemsForSelectingPlayListFrame().addActionListener(this);
